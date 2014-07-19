@@ -28,6 +28,12 @@ namespace AssisticantBasics.ViewModels
             set { _item.Quantity = value; }
         }
 
+        public decimal Price
+        {
+            get { return _item.Price; }
+            set { _item.Price = value; }
+        }
+
         public void Increment()
         {
             _item.Quantity++;

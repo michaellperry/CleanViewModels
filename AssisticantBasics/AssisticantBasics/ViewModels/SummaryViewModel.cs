@@ -16,7 +16,7 @@ namespace AssisticantBasics.ViewModels
             _document = document;
         }
 
-        public int Total
+        public decimal Total
         {
             get { return _document.Total; }
         }
