@@ -1,0 +1,26 @@
+﻿<Window x:Class="AssisticantBasics.Views.ItemDetailWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ItemDetailWindow" Height="300" Width="300"
+        DataContext="{Binding Item, Source={StaticResource Locator}}">
+    <StackPanel HorizontalAlignment="Left" Height="254" VerticalAlignment="Top" Width="213" Grid.Column="1">
+        <TextBlock TextWrapping="Wrap" Text="Name:" Margin="10,10,10,0" Foreground="#FF8F8F8F"/>
+        <TextBox Height="23" TextWrapping="Wrap" Text="{Binding Name}" Margin="10"/>
+        <TextBlock TextWrapping="Wrap" Text="Quantity:" Margin="10,10,10,0" Foreground="#FF8F8F8F"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBox TextWrapping="Wrap" Text="{Binding Quantity}" Margin="10"/>
+            <Grid Grid.Column="1" Margin="10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button Content="+" Width="30" Command="{Binding Increment}"/>
+                <Button Content="-" Grid.Row="1" Width="30" Command="{Binding Decrement}"/>
+            </Grid>
+        </Grid>
+    </StackPanel>
+</Window>

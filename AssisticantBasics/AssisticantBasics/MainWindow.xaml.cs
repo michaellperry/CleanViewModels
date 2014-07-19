@@ -30,6 +30,9 @@ namespace AssisticantBasics
         {
             SummaryWindow summary = new SummaryWindow();
             summary.Show();
+
+            ItemDetailWindow itemDetail = new ItemDetailWindow();
+            itemDetail.Show();
         }
     }
 }
