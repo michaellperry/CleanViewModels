@@ -15,7 +15,7 @@
 	<Window.DataContext>
 		<Binding Path="Main" Source="{StaticResource Locator}"/>
 	</Window.DataContext>
-	<Grid d:DataContext="{d:DesignData /SampleData/MainViewModelSampleData.xaml}" Margin="10">
+	<Grid Margin="10">
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="4*"/>
 			<ColumnDefinition Width="3*"/>
