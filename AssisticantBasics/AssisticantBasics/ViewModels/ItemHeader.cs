@@ -20,7 +20,12 @@ namespace AssisticantBasics.ViewModels
 
         public string Name
         {
-            get { return _item.Name ?? "<New Item>"; }
+            get
+            {
+                return String.Format("{0} ({1})",
+                    _item.Name ?? "<New Item>",
+                    _item.Quantity);
+            }
         }
 
         public override bool Equals(object obj)

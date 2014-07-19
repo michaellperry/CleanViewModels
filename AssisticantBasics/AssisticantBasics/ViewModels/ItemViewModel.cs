@@ -20,6 +20,12 @@ namespace AssisticantBasics.ViewModels
             set { _item.Name = value; }
         }
 
+        public int Quantity
+        {
+            get { return _item.Quantity; }
+            set { _item.Quantity = value; }
+        }
+
         public override bool Equals(object obj)
         {
             if (obj == this)
