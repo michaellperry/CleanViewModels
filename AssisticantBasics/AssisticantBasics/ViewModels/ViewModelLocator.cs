@@ -37,6 +37,15 @@ namespace AssisticantBasics.ViewModels
 			}
 		}
 
+        public object Summary
+        {
+            get
+            {
+                return ViewModel(() =>
+                    new SummaryViewModel(_document));
+            }
+        }
+
 		private Document LoadDocument()
 		{
 			// TODO: Load your document here.

@@ -10,26 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using AssisticantBasics.Views;
 
-namespace AssisticantBasics
+namespace AssisticantBasics.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SummaryWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SummaryWindow : Window
     {
-        public MainWindow()
+        public SummaryWindow()
         {
             InitializeComponent();
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            SummaryWindow summary = new SummaryWindow();
-            summary.Show();
         }
     }
 }

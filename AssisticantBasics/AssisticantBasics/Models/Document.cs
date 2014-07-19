@@ -24,6 +24,11 @@ namespace AssisticantBasics.Models
             get { return _items; }
         }
 
+        public int Total
+        {
+            get { return _items.Sum(i => i.Quantity); }
+        }
+
         public Item NewItem()
         {
             Item item = new Item();
