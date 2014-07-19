@@ -12,7 +12,7 @@ namespace AssisticantBasics.Models
         private Observable<string> _name =
             new Observable<string>();
         private Observable<int> _quantity =
-            new Observable<int>();
+            new Observable<int>(1);
 
         public string Name
         {
