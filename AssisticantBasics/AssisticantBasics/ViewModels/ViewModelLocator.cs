@@ -20,6 +20,8 @@ namespace AssisticantBasics.ViewModels
 			else
 				_document = LoadDocument();
 			_selection = new Selection();
+            if (DesignMode)
+                _selection.SelectedItem = _document.Items.First();
         }
 
         public object Main
