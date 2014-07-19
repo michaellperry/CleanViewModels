@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using AssisticantBasics.Models;
+using System.Windows.Input;
+using Assisticant.XAML;
 
 namespace AssisticantBasics.ViewModels
 {
@@ -24,6 +26,21 @@ namespace AssisticantBasics.ViewModels
         {
             get { return _item.Quantity; }
             set { _item.Quantity = value; }
+        }
+
+        public void Increment()
+        {
+            _item.Quantity++;
+        }
+
+        public bool CanDecrement
+        {
+            get { return _item.Quantity > 1; }
+        }
+
+        public void Decrement()
+        {
+            _item.Quantity--;
         }
 
         public override bool Equals(object obj)
