@@ -42,6 +42,8 @@ namespace AssisticantBasics.ViewModels
             {
                 if (value != null)
                     _selection.SelectedItem = value.Item;
+                else
+                    _selection.SelectedItem = null;
             }
         }
 
