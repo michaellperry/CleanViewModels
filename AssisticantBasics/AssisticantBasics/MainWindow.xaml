@@ -1,9 +1,48 @@
-﻿<Window x:Class="AssisticantBasics.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525"
-    DataContext="{Binding Main, Source={StaticResource Locator}}">
-    <Grid>
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="AssisticantBasics.MainWindow"
+        Title="Assisticant Basics" Height="350" Width="525"
+    >
+	<Window.Resources>
+		<DataTemplate x:Key="ItemHeaderTemplate">
+			<StackPanel>
+				<TextBlock Text="{Binding Name}"/>
+			</StackPanel>
+		</DataTemplate>
+	</Window.Resources>
+	<Window.DataContext>
+		<Binding Path="Main" Source="{StaticResource Locator}"/>
+	</Window.DataContext>
+	<Grid d:DataContext="{d:DesignData /SampleData/MainViewModelSampleData.xaml}" Margin="10">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="4*"/>
+			<ColumnDefinition Width="3*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition/>
+			</Grid.RowDefinitions>
         
-    </Grid>
+			<TextBlock TextWrapping="Wrap" Text="Items:" Margin="10,10,10,0" Foreground="#FF8F8F8F"/>
+        
+			<ListBox ItemsSource="{Binding Items}" ItemTemplate="{DynamicResource ItemHeaderTemplate}" Margin="10" Grid.Row="1" SelectedItem="{Binding SelectedItem}"/>
+		</Grid>
+		<StackPanel HorizontalAlignment="Left" Height="254" VerticalAlignment="Top" Width="213" Grid.Column="1" DataContext="{Binding ItemDetail}">
+			<TextBlock TextWrapping="Wrap" Text="Name:" Margin="10,10,10,0" Foreground="#FF8F8F8F"/>
+			<TextBox Height="23" TextWrapping="Wrap" Text="{Binding Name}" Margin="10"/>
+		</StackPanel>
+		<StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
+			<Button Content="New" Width="75" Margin="10" Height="25" Command="{Binding AddItem}"/>
+			<Button Content="Delete" Width="75" Margin="10" Height="25" Command="{Binding DeleteItem}"/>
+			<Button Content="Up" Width="75" Margin="10" Height="25" Command="{Binding MoveItemUp}"/>
+			<Button Content="Down" Width="75" Margin="10" Height="25" Command="{Binding MoveItemDown}"/>
+		</StackPanel>
+        
+	</Grid>
 </Window>

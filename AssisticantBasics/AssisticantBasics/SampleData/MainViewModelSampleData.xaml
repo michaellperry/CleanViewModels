@@ -1,0 +1,64 @@
+﻿<ViewModels:MainViewModel xmlns:ViewModels="clr-namespace:AssisticantBasics.ViewModels" xmlns:Models="clr-namespace:AssisticantBasics.Models">
+	<ViewModels:MainViewModel.ItemDetail>
+		<ViewModels:ItemViewModel Name="Adipiscing nulla"/>
+	</ViewModels:MainViewModel.ItemDetail>
+	<ViewModels:MainViewModel.Items>
+		<ViewModels:ItemHeader Name="Curabitur sed">
+			<ViewModels:ItemHeader.Item>
+				<Models:Item Name="Class nam aliquam"/>
+			</ViewModels:ItemHeader.Item>
+		</ViewModels:ItemHeader>
+		<ViewModels:ItemHeader Name="Phasellus duis aenean consequat maecenas">
+			<ViewModels:ItemHeader.Item>
+				<Models:Item Name="Curae donec cras vestibulum"/>
+			</ViewModels:ItemHeader.Item>
+		</ViewModels:ItemHeader>
+		<ViewModels:ItemHeader Name="Mauris parturient nullam">
+			<ViewModels:ItemHeader.Item>
+				<Models:Item Name="Adipiscing integer"/>
+			</ViewModels:ItemHeader.Item>
+		</ViewModels:ItemHeader>
+		<ViewModels:ItemHeader Name="Nunc vestibulum">
+			<ViewModels:ItemHeader.Item>
+				<Models:Item Name="Etiam dis aptent"/>
+			</ViewModels:ItemHeader.Item>
+		</ViewModels:ItemHeader>
+		<ViewModels:ItemHeader Name="Congue convallis vivamus cursus dictum">
+			<ViewModels:ItemHeader.Item>
+				<Models:Item Name="Amet praesent accumsan quisque auctor"/>
+			</ViewModels:ItemHeader.Item>
+		</ViewModels:ItemHeader>
+		<ViewModels:ItemHeader Name="Aliquam dictumst dignissim">
+			<ViewModels:ItemHeader.Item>
+				<Models:Item Name="Lectus bibendum"/>
+			</ViewModels:ItemHeader.Item>
+		</ViewModels:ItemHeader>
+		<ViewModels:ItemHeader Name="Ante libero vestibulum blandit">
+			<ViewModels:ItemHeader.Item>
+				<Models:Item Name="Eleifend facilisi elementum aliquet facilisis"/>
+			</ViewModels:ItemHeader.Item>
+		</ViewModels:ItemHeader>
+		<ViewModels:ItemHeader Name="Litora faucibus fermentum fringilla">
+			<ViewModels:ItemHeader.Item>
+				<Models:Item Name="Commodo fusce lorem ligula arcu"/>
+			</ViewModels:ItemHeader.Item>
+		</ViewModels:ItemHeader>
+		<ViewModels:ItemHeader Name="Conubia interdum habitasse cubilia est">
+			<ViewModels:ItemHeader.Item>
+				<Models:Item Name="Habitant inceptos luctus"/>
+			</ViewModels:ItemHeader.Item>
+		</ViewModels:ItemHeader>
+		<ViewModels:ItemHeader Name="Morbi diam leo">
+			<ViewModels:ItemHeader.Item>
+				<Models:Item Name="Lobortis hac magnis"/>
+			</ViewModels:ItemHeader.Item>
+		</ViewModels:ItemHeader>
+	</ViewModels:MainViewModel.Items>
+	<ViewModels:MainViewModel.SelectedItem>
+		<ViewModels:ItemHeader Name="Pharetra placerat elit">
+			<ViewModels:ItemHeader.Item>
+				<Models:Item Name="Nascetur eget"/>
+			</ViewModels:ItemHeader.Item>
+		</ViewModels:ItemHeader>
+	</ViewModels:MainViewModel.SelectedItem>
+</ViewModels:MainViewModel>
