@@ -40,7 +40,9 @@
 		<StackPanel HorizontalAlignment="Left" Height="254" VerticalAlignment="Top" Width="213" Grid.Column="1" DataContext="{Binding ItemDetail}">
 			<TextBlock TextWrapping="Wrap" Text="Name:" Margin="10,10,10,0" Foreground="#FF8F8F8F"/>
 			<TextBox Height="23" TextWrapping="Wrap" Text="{Binding Name}" Margin="10"/>
-		</StackPanel>
+            <TextBlock TextWrapping="Wrap" Text="Quantity:" Margin="10,10,10,0" Foreground="#FF8F8F8F"/>
+            <TextBox Height="23" TextWrapping="Wrap" Text="{Binding Quantity}" Margin="10"/>
+        </StackPanel>
 		<StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
 			<Button Content="New" Width="75" Margin="10" Height="25" Command="{Binding AddItem}"/>
 			<Button Content="Delete" Width="75" Margin="10" Height="25" Command="{Binding DeleteItem}"/>
