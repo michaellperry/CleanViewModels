@@ -1,8 +1,11 @@
 ﻿<Application x:Class="AssisticantBasics.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="MainWindow.xaml">
+             StartupUri="MainWindow.xaml"
+             xmlns:vm="clr-namespace:AssisticantBasics.ViewModels">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <vm:ViewModelLocator x:Key="Locator"/>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
