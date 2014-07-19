@@ -24,9 +24,9 @@ namespace AssisticantBasics.Models
             get { return _items; }
         }
 
-        public int Total
+        public decimal Total
         {
-            get { return _items.Sum(i => i.Quantity); }
+            get { return _items.Sum(i => i.Total); }
         }
 
         public Item NewItem()
