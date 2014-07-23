@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="ItemDetailWindow" Height="300" Width="300"
         DataContext="{Binding Item, Source={StaticResource Locator}}">
-    <StackPanel HorizontalAlignment="Left" Height="254" VerticalAlignment="Top" Width="213" Grid.Column="1">
+    <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10">
         <TextBlock TextWrapping="Wrap" Text="Name:" Margin="10,10,10,0" Foreground="#FF8F8F8F"/>
         <TextBox Height="23" TextWrapping="Wrap" Text="{Binding Name}" Margin="10"/>
         <TextBlock TextWrapping="Wrap" Text="Quantity:" Margin="10,10,10,0" Foreground="#FF8F8F8F"/>
@@ -22,5 +22,7 @@
                 <Button Content="-" Grid.Row="1" Width="30" Command="{Binding Decrement}"/>
             </Grid>
         </Grid>
+        <TextBlock TextWrapping="Wrap" Text="Price:" Margin="10,10,10,0" Foreground="#FF8F8F8F"/>
+        <TextBox Height="23" TextWrapping="Wrap" Text="{Binding Price}" Margin="10"/>
     </StackPanel>
 </Window>
