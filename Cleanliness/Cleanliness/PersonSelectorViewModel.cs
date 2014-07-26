@@ -22,7 +22,8 @@ namespace Cleanliness
 
             MessengerInstance.Register<PersonNameChanged>(this, message =>
             {
-                var person = _people.FirstOrDefault(p => p.Id == message.PersonId);
+                var person = _people
+                    .FirstOrDefault(p => p.Id == message.PersonId);
                 if (person != null)
                 {
                     person.First = message.First;
