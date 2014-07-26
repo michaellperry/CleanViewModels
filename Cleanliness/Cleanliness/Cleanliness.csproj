@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Directory.cs" />
+    <Compile Include="FrameViewModel.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonDetailViewModel.cs" />
     <Compile Include="PersonNameChanged.cs" />
