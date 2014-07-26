@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight;
+﻿using Assisticant.Fields;
+using GalaSoft.MvvmLight;
 
 namespace Cleanliness
 {
