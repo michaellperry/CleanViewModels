@@ -2,31 +2,21 @@
 
 namespace Cleanliness
 {
-    public class PersonViewModel : ViewModelBase
+    public class PersonViewModel
     {
-        private string _first;
-        private string _last;
+        private Observable<string> _first = new Observable<string>();
+        private Observable<string> _last = new Observable<string>();
 
         public string First
         {
             get { return _first; }
-            set
-            {
-                _first = value;
-                RaisePropertyChanged(() => First);
-                RaisePropertyChanged(() => Full);
-            }
+            set { _first.Value = value; }
         }
 
         public string Last
         {
             get { return _last; }
-            set
-            {
-                _last = value;
-                RaisePropertyChanged(() => Last);
-                RaisePropertyChanged(() => Full);
-            }
+            set { _last.Value = value; }
         }
 
         public string Full
