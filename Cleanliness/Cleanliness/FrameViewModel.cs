@@ -1,58 +1,33 @@
-﻿using GalaSoft.MvvmLight;
+﻿using System;
 
 namespace Cleanliness
 {
-    public class FrameViewModel : ViewModelBase
+    public class FrameViewModel
     {
-        private int _firstRoll = 0;
-        private int _secondRoll = 0;
-        private int _cumulativeScore = 0;
+        private readonly Game _game;
+        private readonly int _frameIndex;
+        
+        public FrameViewModel(Game game, int frameIndex)
+        {
+            _game = game;
+            _frameIndex = frameIndex;
+        }
 
         public int FirstRoll
         {
-            get { return _firstRoll; }
-            set
-            {
-                if (_firstRoll == value)
-                {
-                    return;
-                }
-
-                _firstRoll = value;
-                CumulativeScore += value;
-                RaisePropertyChanged(() => FirstRoll);
-            }
+            get { return _game.GetFrame(_frameIndex).FirstRoll; }
+            set { _game.GetFrame(_frameIndex).FirstRoll = value; }
         }
 
         public int SecondRoll
         {
-            get { return _secondRoll; }
-            set
-            {
-                if (_secondRoll == value)
-                {
-                    return;
-                }
-
-                _secondRoll = value;
-                CumulativeScore += value;
-                RaisePropertyChanged(() => SecondRoll);
-            }
+            get { return _game.GetFrame(_frameIndex).SecondRoll; }
+            set { _game.GetFrame(_frameIndex).SecondRoll = value; }
         }
 
         public int CumulativeScore
         {
-            get { return _cumulativeScore; }
-            set
-            {
-                if (_cumulativeScore == value)
-                {
-                    return;
-                }
-
-                _cumulativeScore = value;
-                RaisePropertyChanged(() => CumulativeScore);
-            }
+            get { return _game.GetCumulativeScore(_frameIndex); }
         }
     }
 }

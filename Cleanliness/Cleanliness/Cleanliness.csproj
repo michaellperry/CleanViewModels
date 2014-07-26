@@ -58,7 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Directory.cs" />
+    <Compile Include="Frame.cs" />
     <Compile Include="FrameViewModel.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonDetailViewModel.cs" />
     <Compile Include="PersonSelectionModel.cs" />
