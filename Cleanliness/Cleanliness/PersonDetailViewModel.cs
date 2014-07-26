@@ -1,68 +1,50 @@
-﻿using GalaSoft.MvvmLight;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 
 namespace Cleanliness
 {
-    public class PersonDetailViewModel : ViewModelBase
+    public class PersonDetailViewModel
     {
-        private Directory _directory;
-        private int _id;
-        private string _first;
-        private string _last;
+        private readonly PersonSelectionModel _personSelection;
 
-        public PersonDetailViewModel()
+        public PersonDetailViewModel(
+          PersonSelectionModel personSelection)
         {
-            _directory = new Directory();
-            MessengerInstance.Register<PersonSelected>(this, message =>
-            {
-                var person = _directory.LoadPerson(message.PersonId);
-                _id = message.PersonId;
-                First = person.First;
-                Last = person.Last;
-            });
+            _personSelection = personSelection;
         }
 
         public string First
         {
-            get { return _first; }
+            get
+            {
+                if (_personSelection.SelectedPerson == null)
+                    return null;
+
+                return _personSelection.SelectedPerson.First;
+            }
             set
             {
-                if (value == _first)
+                if (_personSelection.SelectedPerson == null)
                     return;
 
-                _first = value;
-                RaisePropertyChanged(() => this.First);
-
-                MessengerInstance.Send(new PersonNameChanged
-                {
-                    PersonId = _id,
-                    First = value,
-                    Last = Last
-                });
+                _personSelection.SelectedPerson.First = value;
             }
         }
 
         public string Last
         {
-            get { return _last; }
+            get
+            {
+                if (_personSelection.SelectedPerson == null)
+                    return null;
+
+                return _personSelection.SelectedPerson.Last;
+            }
             set
             {
-                if (value == _last)
+                if (_personSelection.SelectedPerson == null)
                     return;
 
-                _last = value;
-                RaisePropertyChanged(() => this.Last);
-
-                MessengerInstance.Send(new PersonNameChanged
-                {
-                    PersonId = _id,
-                    First = First,
-                    Last = value
-                });
+                _personSelection.SelectedPerson.Last = value;
             }
         }
     }

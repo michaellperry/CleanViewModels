@@ -1,35 +1,21 @@
-﻿using GalaSoft.MvvmLight;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Cleanliness
 {
-    public class PersonSelectorViewModel : ViewModelBase
+    public class PersonSelectorViewModel
     {
         private readonly Directory _directory;
         private readonly List<Person> _people;
-        private Person _selectedPerson = null;
+        private readonly PersonSelectionModel _personSelection;
 
         public PersonSelectorViewModel(
-          Directory directory)
+          Directory directory,
+          PersonSelectionModel personSelection)
         {
             _directory = directory;
+            _personSelection = personSelection;
 
             _people = _directory.GetPeople();
-
-            MessengerInstance.Register<PersonNameChanged>(this, message =>
-            {
-                var person = _people
-                    .FirstOrDefault(p => p.Id == message.PersonId);
-                if (person != null)
-                {
-                    person.First = message.First;
-                    person.Last = message.Last;
-                }
-            });
         }
 
         public IEnumerable<Person> People
@@ -39,20 +25,8 @@ namespace Cleanliness
 
         public Person SelectedPerson
         {
-            get { return _selectedPerson; }
-            set
-            {
-                if (_selectedPerson == value)
-                    return;
-
-                _selectedPerson = value;
-                RaisePropertyChanged(() => this.SelectedPerson);
-
-                MessengerInstance.Send(new PersonSelected
-                {
-                    PersonId = value.Id
-                });
-            }
+            get { return _personSelection.SelectedPerson; }
+            set { _personSelection.SelectedPerson = value; }
         }
     }
 }

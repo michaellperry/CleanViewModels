@@ -63,6 +63,7 @@
     <Compile Include="PersonDetailViewModel.cs" />
     <Compile Include="PersonNameChanged.cs" />
     <Compile Include="PersonSelected.cs" />
+    <Compile Include="PersonSelectionModel.cs" />
     <Compile Include="PersonSelectorViewModel.cs" />
     <Compile Include="PersonViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
