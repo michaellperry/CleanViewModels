@@ -61,8 +61,6 @@
     <Compile Include="FrameViewModel.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonDetailViewModel.cs" />
-    <Compile Include="PersonNameChanged.cs" />
-    <Compile Include="PersonSelected.cs" />
     <Compile Include="PersonSelectionModel.cs" />
     <Compile Include="PersonSelectorViewModel.cs" />
     <Compile Include="PersonViewModel.cs" />
