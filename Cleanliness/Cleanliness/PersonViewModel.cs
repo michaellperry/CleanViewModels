@@ -1,24 +1,18 @@
-﻿using Assisticant.Fields;
-using GalaSoft.MvvmLight;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using GalaSoft.MvvmLight;
 
 namespace Cleanliness
 {
     public class PersonViewModel : ViewModelBase
     {
-        private Observable<string> _first = new Observable<string>();
-        private Observable<string> _last = new Observable<string>();
+        private string _first;
+        private string _last;
 
         public string First
         {
             get { return _first; }
             set
             {
-                _first.Value = value;
+                _first = value;
                 RaisePropertyChanged(() => First);
                 RaisePropertyChanged(() => Full);
             }
@@ -29,7 +23,7 @@ namespace Cleanliness
             get { return _last; }
             set
             {
-                _last.Value = value;
+                _last = value;
                 RaisePropertyChanged(() => Last);
                 RaisePropertyChanged(() => Full);
             }
