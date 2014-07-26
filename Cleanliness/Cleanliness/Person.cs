@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Cleanliness
 {
-    class Person
+    public class Person
     {
         public int Id { get; set; }
         public string First { get; set; }
