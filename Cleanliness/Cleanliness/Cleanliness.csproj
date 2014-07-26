@@ -57,6 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Directory.cs" />
+    <Compile Include="Person.cs" />
+    <Compile Include="PersonDetailViewModel.cs" />
+    <Compile Include="PersonNameChanged.cs" />
+    <Compile Include="PersonSelected.cs" />
+    <Compile Include="PersonSelectorViewModel.cs" />
     <Compile Include="PersonViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
