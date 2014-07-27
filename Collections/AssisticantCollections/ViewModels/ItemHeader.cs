@@ -22,9 +22,10 @@ namespace AssisticantCollections.ViewModels
         {
             get
             {
-                return String.Format("{0} ({1})",
+                return String.Format("{0} ({1} @ {2:c})",
                     _item.Name ?? "<New Item>",
-                    _item.Quantity);
+                    _item.Quantity,
+                    _item.Price);
             }
         }
 

@@ -45,10 +45,16 @@ namespace AssisticantCollections.ViewModels
             Document document = new Document();
             var one = document.NewItem();
             one.Name = "One";
+            one.Quantity = 1;
+            one.Price = 1.42m;
             var two = document.NewItem();
             two.Name = "Two";
+            two.Quantity = 2;
+            two.Price = 4.56m;
             var three = document.NewItem();
             three.Name = "Three";
+            three.Quantity = 3;
+            three.Price = 2.33m;
             return document;
 		}
 
@@ -57,10 +63,16 @@ namespace AssisticantCollections.ViewModels
             Document document = new Document();
             var one = document.NewItem();
             one.Name = "Design";
+            one.Quantity = 1;
+            one.Price = 1.11m;
             var two = document.NewItem();
             two.Name = "Mode";
+            two.Quantity = 2;
+            two.Price = 2.22m;
             var three = document.NewItem();
             three.Name = "Data";
+            three.Quantity = 3;
+            three.Price = 3.33m;
             return document;
 		}
     }
