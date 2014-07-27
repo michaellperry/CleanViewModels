@@ -6,7 +6,8 @@
     >
 	<Window.Resources>
 		<DataTemplate x:Key="ItemHeaderTemplate">
-			<StackPanel>
+			<StackPanel Orientation="Horizontal">
+				<CheckBox Content=""/>
 				<TextBlock Text="{Binding Name}"/>
 			</StackPanel>
 		</DataTemplate>
