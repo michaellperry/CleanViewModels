@@ -1,6 +1,7 @@
 using System;
 using System.Linq;
 using AssisticantCollections.Models;
+using Assisticant.Fields;
 
 namespace AssisticantCollections.ViewModels
 {
