@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using AssisticantCollections.Models;
 using Assisticant;
+using Assisticant.Fields;
 
 namespace AssisticantCollections.ViewModels
 {
