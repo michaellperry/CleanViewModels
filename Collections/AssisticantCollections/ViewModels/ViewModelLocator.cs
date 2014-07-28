@@ -46,7 +46,7 @@ namespace AssisticantCollections.ViewModels
             var one = document.NewItem();
             one.Name = "One";
             one.Quantity = 1;
-            one.Price = 1.42m;
+            one.Price = 3.42m;
             var two = document.NewItem();
             two.Name = "Two";
             two.Quantity = 2;
