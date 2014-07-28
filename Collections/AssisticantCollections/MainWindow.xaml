@@ -39,7 +39,9 @@
 					<System:String>Quantity</System:String>
 					<System:String>Price</System:String>
 				</ComboBox>
-				<TextBlock Text="Items:" Margin="10,10,10,0" Foreground="#FF8F8F8F"/>
+                <TextBlock Text="Filter:" Margin="10,10,10,0" Foreground="#FF8F8F8F"/>
+                <TextBox Text="{Binding Filter, UpdateSourceTrigger=PropertyChanged}" Margin="10" />
+                <TextBlock Text="Items:" Margin="10,10,10,0" Foreground="#FF8F8F8F"/>
 			</StackPanel>
         
 			<ListBox ItemsSource="{Binding Items}" ItemTemplate="{DynamicResource ItemHeaderTemplate}" Margin="10" Grid.Row="1" SelectedItem="{Binding SelectedItem}">

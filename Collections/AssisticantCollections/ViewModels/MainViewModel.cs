@@ -15,6 +15,7 @@ namespace AssisticantCollections.ViewModels
         private readonly Document _document;
 		private readonly Selection _selection;
         private Observable<OrderOptions> _order = new Observable<OrderOptions>(default(OrderOptions));
+        private Observable<string> _filter = new Observable<string>(default(string));
 
         public MainViewModel(Document document, Selection selection)
         {
@@ -28,11 +29,19 @@ namespace AssisticantCollections.ViewModels
             set { _order.Value = value; }
         }
 
+        public string Filter
+        {
+            get { return _filter; }
+            set { _filter.Value = value; }
+        }
+
         public IEnumerable<ItemHeader> Items
         {
             get
             {
                 IEnumerable<Item> items = _document.Items;
+                if (!String.IsNullOrEmpty(Filter))
+                    items = items.Where(i => i.Name.StartsWith(Filter));
                 if (Order == OrderOptions.Name)
                     items = items.OrderBy(i => i.Name);
                 if (Order == OrderOptions.Quantity)
