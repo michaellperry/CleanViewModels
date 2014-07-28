@@ -66,6 +66,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converters\EnumConverter.cs" />
     <Compile Include="Models\OrderOptions.cs" />
     <Compile Include="Models\Selection.cs" />
     <Compile Include="ViewModels\ItemHeader.cs" />
