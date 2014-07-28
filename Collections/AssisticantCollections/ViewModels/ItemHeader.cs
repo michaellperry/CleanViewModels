@@ -8,6 +8,7 @@ namespace AssisticantCollections.ViewModels
     public class ItemHeader
     {
         private readonly Item _item;
+        private Observable<bool> _checked = new Observable<bool>(default(bool));
 
         public ItemHeader(Item item)
         {
@@ -17,6 +18,12 @@ namespace AssisticantCollections.ViewModels
         public Item Item
         {
             get { return _item; }
+        }
+
+        public bool Checked
+        {
+            get { return _checked; }
+            set { _checked.Value = value; }
         }
 
         public string Name

@@ -8,7 +8,7 @@
 	<Window.Resources>
 		<DataTemplate x:Key="ItemHeaderTemplate">
 			<StackPanel Orientation="Horizontal">
-				<CheckBox Content=""/>
+				<CheckBox Content="" IsChecked="{Binding Checked}"/>
 				<TextBlock Text="{Binding Name}"/>
 			</StackPanel>
 		</DataTemplate>
