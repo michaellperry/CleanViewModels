@@ -6,7 +6,7 @@
         Title="Assisticant Collections" Height="350" Width="525"
     >
 	<Window.Resources>
-		<Converters:SimpleTypeConverter x:Key="SimpleTypeConverter"/>
+		<Converters:EnumConverter x:Key="EnumConverter"/>
 		<DataTemplate x:Key="ItemHeaderTemplate">
 			<StackPanel Orientation="Horizontal">
 				<CheckBox Content="" IsChecked="{Binding Checked}"/>
@@ -34,7 +34,7 @@
         
 			<StackPanel>
 				<TextBlock Text="Order By:" Margin="10,10,10,0" Foreground="#FF8F8F8F"/>
-				<ComboBox Margin="10" SelectedIndex="{Binding Order, Converter={StaticResource SimpleTypeConverter}}" >
+				<ComboBox Margin="10" SelectedIndex="{Binding Order, Converter={StaticResource EnumConverter}}" >
 					<System:String>Name</System:String>
 					<System:String>Quantity</System:String>
 					<System:String>Price</System:String>

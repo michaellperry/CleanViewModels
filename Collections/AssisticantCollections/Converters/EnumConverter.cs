@@ -8,7 +8,7 @@ using System.Windows.Data;
 
 namespace AssisticantCollections.Converters
 {
-    class SimpleTypeConverter : IValueConverter
+    class EnumConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
@@ -17,7 +17,7 @@ namespace AssisticantCollections.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            return System.Convert.ChangeType(value, targetType, CultureInfo.CurrentCulture);
+            return Enum.ToObject(targetType, (byte)(int)value);
         }
     }
 }
