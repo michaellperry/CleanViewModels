@@ -14,6 +14,7 @@ namespace AssisticantCollections.ViewModels
     {
         private readonly Document _document;
 		private readonly Selection _selection;
+        private Observable<OrderOptions> _order = new Observable<OrderOptions>(default(OrderOptions));
 
         public MainViewModel(Document document, Selection selection)
         {
@@ -21,13 +22,25 @@ namespace AssisticantCollections.ViewModels
 			_selection = selection;
         }
 
+        public OrderOptions Order
+        {
+            get { return _order; }
+            set { _order.Value = value; }
+        }
+
         public IEnumerable<ItemHeader> Items
         {
             get
             {
-                var itemHeaders = _document.Items
-                    .Select(i => new ItemHeader(i))
-                    .ToList();
+                IEnumerable<Item> items = _document.Items;
+                if (Order == OrderOptions.Name)
+                    items = items.OrderBy(i => i.Name);
+                if (Order == OrderOptions.Quantity)
+                    items = items.OrderBy(i => i.Quantity);
+                if (Order == OrderOptions.Price)
+                    items = items.OrderBy(i => i.Price);
+                IEnumerable<ItemHeader> itemHeaders = items
+                    .Select(i => new ItemHeader(i));
                 return itemHeaders;
             }
         }
