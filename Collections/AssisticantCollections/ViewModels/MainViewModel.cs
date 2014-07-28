@@ -84,35 +84,5 @@ namespace AssisticantCollections.ViewModels
                     });
             }
         }
-
-        public ICommand MoveItemDown
-        {
-            get
-            {
-                return MakeCommand
-                    .When(() =>
-                        _selection.SelectedItem != null &&
-                        _document.CanMoveDown(_selection.SelectedItem))
-                    .Do(delegate
-                    {
-                        _document.MoveDown(_selection.SelectedItem);
-                    });
-            }
-        }
-
-        public ICommand MoveItemUp
-        {
-            get
-            {
-                return MakeCommand
-                    .When(() =>
-                        _selection.SelectedItem != null &&
-                        _document.CanMoveUp(_selection.SelectedItem))
-                    .Do(delegate
-                    {
-                        _document.MoveUp(_selection.SelectedItem);
-                    });
-            }
-        }
     }
 }
