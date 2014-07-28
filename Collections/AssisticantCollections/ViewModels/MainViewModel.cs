@@ -24,9 +24,10 @@ namespace AssisticantCollections.ViewModels
         {
             get
             {
-                return
-                    from item in _document.Items
-                    select new ItemHeader(item);
+                var itemHeaders = _document.Items
+                    .Select(i => new ItemHeader(i))
+                    .ToList();
+                return itemHeaders;
             }
         }
 
