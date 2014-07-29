@@ -59,7 +59,7 @@
 			<TextBlock Text="Name:" Margin="10,10,10,0" Foreground="#FF8F8F8F"/>
 			<TextBox Text="{Binding Name}" Margin="10"/>
             <TextBlock Text="Parent:" Margin="10,10,10,0" Foreground="#FF8F8F8F"/>
-            <ComboBox Margin="10" ItemsSource="{Binding ParentOptions}" SelectedItem="{Binding Parent}" ItemTemplate="{DynamicResource ParentHeaderTemplate}"/>
+            <ComboBox Margin="10" ItemsSource="{Binding ParentCandidates}" SelectedItem="{Binding Parent}" ItemTemplate="{DynamicResource ParentHeaderTemplate}"/>
             <TextBlock Text="Quantity:" Margin="10,10,10,0" Foreground="#FF8F8F8F"/>
 			<Grid>
 				<Grid.ColumnDefinitions>

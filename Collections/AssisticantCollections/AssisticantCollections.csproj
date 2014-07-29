@@ -72,6 +72,7 @@
     <Compile Include="ViewModels\ItemHeader.cs" />
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\ParentHeader.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

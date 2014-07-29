@@ -8,10 +8,12 @@ namespace AssisticantCollections.ViewModels
 {
     public class ItemViewModel
     {
+        private readonly Document _document;
         private readonly Item _item;
-
-        public ItemViewModel(Item item)
+        
+        public ItemViewModel(Document document, Item item)
         {
+            _document = document;
             _item = item;
         }
 

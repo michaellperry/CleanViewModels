@@ -35,7 +35,7 @@ namespace AssisticantCollections.ViewModels
 			{
 				return ViewModel(() => _selection.SelectedItem == null
 					? null
-					: new ItemViewModel(_selection.SelectedItem));
+					: new ItemViewModel(_document, _selection.SelectedItem));
 			}
 		}
 

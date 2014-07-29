@@ -39,7 +39,23 @@ namespace AssisticantCollections.Models
         public Item Parent
         {
             get { return _parent; }
-            set { _parent.Value = value; }
+            set
+            {
+                if (IsValidParent(value))
+                    _parent.Value = value;
+            }
+        }
+
+        public bool IsValidParent(Item candidate)
+        {
+            while (true)
+            {
+                if (candidate == null)
+                    return true;
+                if (candidate == this)
+                    return false;
+                candidate = candidate.Parent;
+            }
         }
     }
 }
