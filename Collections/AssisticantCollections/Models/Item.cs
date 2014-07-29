@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Assisticant.Collections;
 using Assisticant.Fields;
 
 namespace AssisticantCollections.Models
@@ -15,6 +10,8 @@ namespace AssisticantCollections.Models
             new Observable<int>(1);
         private Observable<decimal> _price =
             new Observable<decimal>();
+        private Observable<Item> _parent =
+            new Observable<Item>();
 
         public string Name
         {
@@ -37,6 +34,12 @@ namespace AssisticantCollections.Models
         public decimal Total
         {
             get { return _price * _quantity; }
+        }
+
+        public Item Parent
+        {
+            get { return _parent; }
+            set { _parent.Value = value; }
         }
     }
 }
