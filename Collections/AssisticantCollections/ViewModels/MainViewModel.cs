@@ -23,7 +23,8 @@ namespace AssisticantCollections.ViewModels
             {
                 return
                     from item in _document.Items
-                    select new ItemHeader(item);
+                    where item.Parent == null
+                    select new ItemHeader(_document, item, _selection);
             }
         }
 
@@ -33,7 +34,7 @@ namespace AssisticantCollections.ViewModels
             {
                 return _selection.SelectedItem == null
                     ? null
-                    : new ItemHeader(_selection.SelectedItem);
+                    : new ItemHeader(_document, _selection.SelectedItem, _selection);
             }
             set
             {

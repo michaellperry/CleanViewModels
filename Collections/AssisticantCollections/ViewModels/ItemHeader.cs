@@ -8,17 +8,44 @@ namespace AssisticantCollections.ViewModels
 {
     public class ItemHeader
     {
+        private readonly Document _document;
         private readonly Item _item;
+        private readonly Selection _selection;
         private Observable<bool> _checked = new Observable<bool>(default(bool));
         
-        public ItemHeader(Item item)
+        public ItemHeader(Document document, Item item, Selection selection)
         {
+            _document = document;
             _item = item;
+            _selection = selection;
         }
 
         public Item Item
         {
             get { return _item; }
+        }
+
+        public bool Selected
+        {
+            get { return _selection.SelectedItem == _item; }
+            set
+            {
+                if (value == true)
+                    _selection.SelectedItem = _item;
+                else if (_selection.SelectedItem == _item)
+                    _selection.SelectedItem = null;
+            }
+        }
+
+        public IEnumerable<ItemHeader> Children
+        {
+            get
+            {
+                return
+                    from item in _document.Items
+                    where item.Parent == _item
+                    select new ItemHeader(_document, item, _selection);
+            }
         }
 
         public bool Checked
