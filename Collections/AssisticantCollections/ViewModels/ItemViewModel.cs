@@ -23,6 +23,39 @@ namespace AssisticantCollections.ViewModels
             set { _item.Name = value; }
         }
 
+        public IEnumerable<IParentHeader> ParentCandidates
+        {
+            get
+            {
+                var root = new List<IParentHeader>
+                {
+                    new RootParentHeader()
+                };
+                var actuals =
+                    from item in _document.Items
+                    where _item.IsValidParent(item)
+                    select new ParentHeader(item);
+
+                return root.Concat(actuals);
+            }
+        }
+
+        public IParentHeader Parent
+        {
+            set
+            {
+                _item.Parent = value == null
+                    ? null
+                    : value.Item;
+            }
+            get
+            {
+                return _item.Parent == null
+                    ? (IParentHeader)new RootParentHeader()
+                    : new ParentHeader(_item.Parent);
+            }
+        }
+
         public int Quantity
         {
             get { return _item.Quantity; }
