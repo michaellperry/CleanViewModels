@@ -2,6 +2,7 @@ using System;
 using System.Linq;
 using AssisticantCollections.Models;
 using Assisticant.Fields;
+using System.Collections.Generic;
 
 namespace AssisticantCollections.ViewModels
 {
@@ -9,7 +10,7 @@ namespace AssisticantCollections.ViewModels
     {
         private readonly Item _item;
         private Observable<bool> _checked = new Observable<bool>(default(bool));
-
+        
         public ItemHeader(Item item)
         {
             _item = item;

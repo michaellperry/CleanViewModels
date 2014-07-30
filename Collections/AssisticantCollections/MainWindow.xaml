@@ -46,14 +46,14 @@
 			<StackPanel>
                 <TextBlock Text="Items:" Margin="10,10,10,0" Foreground="#FF8F8F8F"/>
 			</StackPanel>
-            <ListBox ItemsSource="{Binding Items}" ItemTemplate="{DynamicResource ItemHeaderTemplate}" Margin="10" Grid.Row="1" SelectedItem="{Binding SelectedItem}"/>
-            <!--<TreeView Margin="10" Grid.Row="1" ItemsSource="{Binding Items}" ItemTemplate="{DynamicResource HierarchicalItemDataTemplate}">
+            <!--<ListBox ItemsSource="{Binding Items}" ItemTemplate="{DynamicResource ItemHeaderTemplate}" Margin="10" Grid.Row="1" SelectedItem="{Binding SelectedItem}"/>-->
+            <TreeView Margin="10" Grid.Row="1" ItemsSource="{Binding Items}" ItemTemplate="{DynamicResource HierarchicalItemDataTemplate}">
                 <TreeView.ItemContainerStyle>
                     <Style TargetType="{x:Type TreeViewItem}">
                         <Setter Property="IsSelected" Value="{Binding Selected}" />
                     </Style>
                 </TreeView.ItemContainerStyle>
-            </TreeView>-->
+            </TreeView>
 		</Grid>
 		<StackPanel DataContext="{Binding ItemDetail}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10" Grid.Column="1">
 			<TextBlock Text="Name:" Margin="10,10,10,0" Foreground="#FF8F8F8F"/>
