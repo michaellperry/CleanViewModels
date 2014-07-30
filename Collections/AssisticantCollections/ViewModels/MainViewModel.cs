@@ -23,7 +23,6 @@ namespace AssisticantCollections.ViewModels
             {
                 return
                     from item in _document.Items
-                    where item.Parent == null
                     select new ItemHeader(item);
             }
         }
