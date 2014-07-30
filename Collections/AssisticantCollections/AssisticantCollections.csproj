@@ -69,6 +69,8 @@
     <Compile Include="Converters\EnumConverter.cs" />
     <Compile Include="Models\OrderOptions.cs" />
     <Compile Include="Models\Selection.cs" />
+    <Compile Include="ViewModels\IParentHeader.cs" />
+    <Compile Include="ViewModels\RootParentHeader.cs" />
     <Compile Include="ViewModels\ItemHeader.cs" />
     <Compile Include="ViewModels\ItemViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
