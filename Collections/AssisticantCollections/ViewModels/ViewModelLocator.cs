@@ -58,9 +58,9 @@ namespace AssisticantCollections.ViewModels
             parent.Quantity = quantity;
             parent.Price = price;
 
-            //NewChildItem(document, parent, "-a", 7);
-            //NewChildItem(document, parent, "-b", 13);
-            //NewChildItem(document, parent, "-c", 27);
+            NewChildItem(document, parent, "-a", 7);
+            NewChildItem(document, parent, "-b", 13);
+            NewChildItem(document, parent, "-c", 27);
 
             return parent;
         }
