@@ -12,6 +12,8 @@ namespace AssisticantCollections.Models
             new Observable<decimal>();
         private Observable<Item> _parent =
             new Observable<Item>();
+        private Observable<bool> _checked =
+            new Observable<bool>();
 
         public string Name
         {
@@ -44,6 +46,12 @@ namespace AssisticantCollections.Models
                 if (IsValidParent(value))
                     _parent.Value = value;
             }
+        }
+
+        public bool Checked
+        {
+            get { return _checked; }
+            set { _checked.Value = value; }
         }
 
         public bool IsValidParent(Item candidate)

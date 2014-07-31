@@ -20,7 +20,7 @@
 		</DataTemplate>
 		<HierarchicalDataTemplate x:Key="HierarchicalItemDataTemplate" ItemsSource="{Binding Children}">
 			<StackPanel Orientation="Horizontal">
-				<CheckBox Content="" IsChecked="{Binding Checked}"/>
+				<CheckBox Content="" IsChecked="{Binding Checked}" IsThreeState="True"/>
 				<TextBlock Text="{Binding Name}"/>
 			</StackPanel>
 		</HierarchicalDataTemplate>

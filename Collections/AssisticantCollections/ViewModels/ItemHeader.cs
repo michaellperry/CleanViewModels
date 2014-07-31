@@ -11,7 +11,6 @@ namespace AssisticantCollections.ViewModels
         private readonly Document _document;
         private readonly Item _item;
         private readonly Selection _selection;
-        private Observable<bool> _checked = new Observable<bool>(default(bool));
         
         public ItemHeader(Document document, Item item, Selection selection)
         {
@@ -48,10 +47,10 @@ namespace AssisticantCollections.ViewModels
             }
         }
 
-        public bool Checked
+        public bool? Checked
         {
-            get { return _checked; }
-            set { _checked.Value = value; }
+            get { return _item.Checked; }
+            set { _item.Checked = value ?? false; }
         }
 
         public string Name
