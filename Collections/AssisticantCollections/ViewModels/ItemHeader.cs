@@ -49,8 +49,32 @@ namespace AssisticantCollections.ViewModels
 
         public bool? Checked
         {
-            get { return _item.Checked; }
-            set { _item.Checked = value ?? false; }
+            get
+            {
+                var children = Children;
+                if (!children.Any())
+                    return _item.Checked;
+                else
+                {
+                    var anyChecked = children.Any(c => c.Checked ?? true);
+                    var anyUnchecked = children.Any(c => !c.Checked ?? true);
+                    if (anyChecked && anyUnchecked)
+                        return null;
+                    else
+                        return anyChecked;
+                }
+            }
+            set
+            {
+                var children = Children;
+                if (!children.Any())
+                    _item.Checked = value ?? false;
+                else
+                {
+                    foreach (var child in children)
+                        child.Checked = value;
+                }
+            }
         }
 
         public string Name
