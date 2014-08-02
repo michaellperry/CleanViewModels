@@ -42,6 +42,9 @@
     <Reference Include="Assisticant.XAML">
       <HintPath>..\packages\Assisticant.1.1.1\lib\net45\Assisticant.XAML.dll</HintPath>
     </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.5.0\lib\net40\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="Itzben">
       <HintPath>..\packages\itzben.1.1.1\lib\NET45\Itzben.dll</HintPath>
     </Reference>
@@ -112,7 +115,6 @@
     <Compile Include="ViewModels\InteractionViewModel.cs" />
     <Compile Include="ViewModels\MeetingViewModel.cs" />
     <Compile Include="ViewModels\PhoneCallViewModel.cs" />
-    <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="Views\ContactEditDialog.xaml.cs">
       <DependentUpon>ContactEditDialog.xaml</DependentUpon>
     </Compile>
