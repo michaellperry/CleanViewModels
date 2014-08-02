@@ -10,7 +10,7 @@ using Assisticant.Fields;
 
 namespace PierceWrapper.Pages
 {
-    public class MainPage : ViewModelBase
+    public class MainPage
     {
         private ContactRepository _repository = null;
         private DialogManager _dialogManager = null;
@@ -20,15 +20,6 @@ namespace PierceWrapper.Pages
         {
             _repository = repository;
             _dialogManager = dialogManager;
-        }
-
-        public object Content
-        {
-            get
-            {
-                return Get(() => ForView.Wrap(
-                    new ContactCardViewModel(_repository, _dialogManager, _contactId)));
-            }
         }
     }
 }
