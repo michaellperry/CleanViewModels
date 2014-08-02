@@ -43,6 +43,11 @@ namespace PierceWrapper.ViewModels
             get { return _contact.Value.Last; }
         }
 
+        public string Company
+        {
+            get { return _contact.Value.Company; }
+        }
+
         public string Phone
         {
             get { return _contact.Value.Phone; }

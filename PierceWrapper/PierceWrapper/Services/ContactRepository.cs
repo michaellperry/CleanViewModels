@@ -10,6 +10,7 @@ namespace PierceWrapper.Services
             {
                 First = "Jose",
                 Last = "Capablanca",
+                Company = "Columbia University",
                 Email = "champion@fide.org",
                 Phone = "555-1911",
                 DisplayAs = DisplayOption.LastFirst

@@ -31,6 +31,12 @@ namespace PierceWrapper.ViewModels
             set { _contact.Last = value; }
         }
 
+        public string Company
+        {
+            get { return _contact.Company; }
+            set { _contact.Company = value; }
+        }
+
         public string Phone
         {
             get { return _contact.Phone; }

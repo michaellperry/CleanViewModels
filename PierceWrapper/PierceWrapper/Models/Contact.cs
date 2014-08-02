@@ -78,5 +78,22 @@ namespace PierceWrapper.Models
         {
             get { return DisplayUsingOption(DisplayAs); }
         }
+
+        public static Contact Copy(Contact original)
+        {
+            var copy = new Contact(original.Id);
+            original.CopyTo(copy);
+            return copy;
+        }
+
+        public void CopyTo(Contact destination)
+        {
+            destination.First = First;
+            destination.Last = Last;
+            destination.Company = Company;
+            destination.Email = Email;
+            destination.Phone = Phone;
+            destination.DisplayAs = DisplayAs;
+        }
     }
 }
