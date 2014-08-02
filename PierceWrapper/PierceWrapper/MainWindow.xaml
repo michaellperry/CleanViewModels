@@ -1,0 +1,11 @@
+﻿<Window x:Class="PierceWrapper.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:v="clr-namespace:PierceWrapper.Views"
+        Title="Contact Card" Height="470" Width="525"
+        DataContext="{Binding Source={StaticResource Locator}, Path=ContactCard}"
+        Loaded="Window_Loaded">
+    <Grid>
+        <v:ContactCardView />
+    </Grid>
+</Window>
