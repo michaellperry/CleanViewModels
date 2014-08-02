@@ -13,6 +13,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PierceWrapper.Pages;
+using PierceWrapper.Services;
 
 namespace PierceWrapper
 {
@@ -28,8 +30,6 @@ namespace PierceWrapper
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            ForView.Unwrap<ContactCardViewModel>(DataContext, vm =>
-                vm.Load());
         }
     }
 }

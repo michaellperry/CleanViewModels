@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Assisticant;
+using PierceWrapper.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,12 @@ namespace PierceWrapper.Views
         public ContactCardView()
         {
             InitializeComponent();
+        }
+
+        void ContactCardView_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            ForView.Unwrap<ContactCardViewModel>(e.NewValue, vm =>
+                vm.Load());
         }
     }
 }

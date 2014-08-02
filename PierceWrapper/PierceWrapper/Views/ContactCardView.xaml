@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:a="clr-namespace:Assisticant;assembly=Assisticant.XAML"
              mc:Ignorable="d" 
-             d:DesignHeight="440.162" d:DesignWidth="418.782">
+             d:DesignHeight="440.162" d:DesignWidth="418.782"
+             DataContextChanged="ContactCardView_DataContextChanged">
     <Control.Resources>
         <Style x:Key="LabelStyle" TargetType="TextBlock">
             <Setter Property="Foreground" Value="Gray" />

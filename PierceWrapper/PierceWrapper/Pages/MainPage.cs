@@ -14,7 +14,13 @@ namespace PierceWrapper.Pages
     {
         private ContactRepository _repository = null;
         private DialogManager _dialogManager = null;
-        private Observable<int> _contactId = new Observable<int>();
+        private Observable<int> _contactId = new Observable<int>(42);
+
+        public MainPage(ContactRepository repository, DialogManager dialogManager)
+        {
+            _repository = repository;
+            _dialogManager = dialogManager;
+        }
 
         public object Content
         {
