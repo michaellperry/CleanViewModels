@@ -1,4 +1,4 @@
-﻿using Assisticant.XAML;
+﻿using Assisticant;
 using PierceWrapper.Services;
 
 namespace PierceWrapper.ViewModels

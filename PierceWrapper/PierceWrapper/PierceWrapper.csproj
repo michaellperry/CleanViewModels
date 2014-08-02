@@ -36,10 +36,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Assisticant">
-      <HintPath>..\packages\Assisticant.1.0.0\lib\net45\Assisticant.dll</HintPath>
+      <HintPath>..\packages\Assisticant.1.1.1\lib\net45\Assisticant.dll</HintPath>
     </Reference>
     <Reference Include="Assisticant.XAML">
-      <HintPath>..\packages\Assisticant.1.0.0\lib\net45\Assisticant.XAML.dll</HintPath>
+      <HintPath>..\packages\Assisticant.1.1.1\lib\net45\Assisticant.XAML.dll</HintPath>
     </Reference>
     <Reference Include="Itzben">
       <HintPath>..\packages\itzben.1.1.1\lib\NET45\Itzben.dll</HintPath>
