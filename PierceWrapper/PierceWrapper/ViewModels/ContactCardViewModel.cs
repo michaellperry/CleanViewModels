@@ -1,6 +1,9 @@
 ﻿using Assisticant.Fields;
 using PierceWrapper.Models;
 using PierceWrapper.Services;
+using System.Collections.Generic;
+using System;
+using System.Linq;
 
 namespace PierceWrapper.ViewModels
 {
@@ -56,6 +59,17 @@ namespace PierceWrapper.ViewModels
         public string Email
         {
             get { return _contact.Value.Email; }
+        }
+
+        public IEnumerable<InteractionViewModel> Interactions
+        {
+            get
+            {
+                return
+                    from interaction in _contact.Value.Interactions
+                    orderby interaction.Date
+                    select InteractionViewModel.For(interaction);
+            }
         }
 
         public bool CanEdit

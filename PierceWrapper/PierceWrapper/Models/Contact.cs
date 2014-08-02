@@ -1,5 +1,7 @@
-﻿using Assisticant.Fields;
+﻿using Assisticant.Collections;
+using Assisticant.Fields;
 using System;
+using System.Collections.Generic;
 
 namespace PierceWrapper.Models
 {
@@ -13,6 +15,7 @@ namespace PierceWrapper.Models
         private Observable<string> _phone = new Observable<string>();
         private Observable<string> _email = new Observable<string>();
         private Observable<DisplayOption> _displayAs = new Observable<DisplayOption>();
+        private ObservableList<Interaction> _interactions = new ObservableList<Interaction>();
 
         public Contact(int id = -1)
         {
@@ -77,6 +80,16 @@ namespace PierceWrapper.Models
         public string Display
         {
             get { return DisplayUsingOption(DisplayAs); }
+        }
+
+        public IEnumerable<Interaction> Interactions
+        {
+            get { return _interactions; }
+        }
+
+        public void AddIneraction(Interaction interaction)
+        {
+            _interactions.Add(interaction);
         }
 
         public static Contact Copy(Contact original)

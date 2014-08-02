@@ -21,18 +21,25 @@
             <Setter Property="HorizontalAlignment" Value="Left" />
         </Style>
     </Window.Resources>
-    <StackPanel Margin="10">
-        <TextBlock Style="{DynamicResource TitleStyle}" Text="{Binding Display}"/>
-        <TextBlock Style="{DynamicResource LabelStyle}" Text="First Name:" />
-        <TextBlock Style="{DynamicResource ValueStyle}" Text="{Binding First}" />
-        <TextBlock Style="{DynamicResource LabelStyle}" Text="Last Name:" />
-        <TextBlock Style="{DynamicResource ValueStyle}" Text="{Binding Last}" />
-        <TextBlock Style="{DynamicResource LabelStyle}" Text="Company:" />
-        <TextBlock Style="{DynamicResource ValueStyle}" Text="{Binding Company}" />
-        <TextBlock Style="{DynamicResource LabelStyle}" Text="Email:" />
-        <TextBlock Style="{DynamicResource ValueStyle}" Text="{Binding Email}" />
-        <TextBlock Style="{DynamicResource LabelStyle}" Text="Phone:" />
-        <TextBlock Style="{DynamicResource ValueStyle}" Text="{Binding Phone}" />
-        <Button Style="{DynamicResource ActionStyle}" Content="Edit" Command="{Binding Edit}" />
-    </StackPanel>
+    <Grid Margin="10">
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition Width="230"/>
+    		<ColumnDefinition/>
+    	</Grid.ColumnDefinitions>
+		<StackPanel>
+			<TextBlock Style="{DynamicResource TitleStyle}" Text="{Binding Display}"/>
+			<TextBlock Style="{DynamicResource LabelStyle}" Text="First Name:" />
+			<TextBlock Style="{DynamicResource ValueStyle}" Text="{Binding First}" />
+			<TextBlock Style="{DynamicResource LabelStyle}" Text="Last Name:" />
+			<TextBlock Style="{DynamicResource ValueStyle}" Text="{Binding Last}" />
+			<TextBlock Style="{DynamicResource LabelStyle}" Text="Company:" />
+			<TextBlock Style="{DynamicResource ValueStyle}" Text="{Binding Company}" />
+			<TextBlock Style="{DynamicResource LabelStyle}" Text="Email:" />
+			<TextBlock Style="{DynamicResource ValueStyle}" Text="{Binding Email}" />
+			<TextBlock Style="{DynamicResource LabelStyle}" Text="Phone:" />
+			<TextBlock Style="{DynamicResource ValueStyle}" Text="{Binding Phone}" />
+			<Button Style="{DynamicResource ActionStyle}" Content="Edit" Command="{Binding Edit}" />
+		</StackPanel>
+		<ListBox Grid.Column="1" Margin="10" ItemsSource="{Binding Interactions}"/>
+	</Grid>
 </Window>

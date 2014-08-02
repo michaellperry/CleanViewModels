@@ -1,0 +1,5 @@
+﻿<ViewModels:EmailMessageViewModel xmlns:ViewModels="clr-namespace:PierceWrapper.ViewModels" xmlns:Models="clr-namespace:PierceWrapper.Models" Date="November 5, 2003" Sent="True">
+	<ViewModels:EmailMessageViewModel.Interaction>
+		<Models:Interaction Date="08/02/2014 11:42:17"/>
+	</ViewModels:EmailMessageViewModel.Interaction>
+</ViewModels:EmailMessageViewModel>
