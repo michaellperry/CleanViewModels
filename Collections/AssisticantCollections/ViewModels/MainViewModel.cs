@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using AssisticantCollections.Models;
-using Assisticant.XAML;
+using Assisticant;
 
 namespace AssisticantCollections.ViewModels
 {

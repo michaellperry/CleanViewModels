@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using AssisticantCollections.Models;
 using System.Windows.Input;
-using Assisticant.XAML;
 
 namespace AssisticantCollections.ViewModels
 {
