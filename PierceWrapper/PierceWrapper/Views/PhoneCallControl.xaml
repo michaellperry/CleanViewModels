@@ -4,10 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
-             d:DesignHeight="62" d:DesignWidth="300" Background="#FFA0915D">
-    <StackPanel d:DataContext="{d:DesignData /SampleData/PhoneCallViewModelSampleData.xaml}" Height="58" VerticalAlignment="Top">
+             d:DesignHeight="62" d:DesignWidth="300" Background="#D7C588">
+    <StackPanel d:DataContext="{d:DesignData /SampleData/PhoneCallViewModelSampleData.xaml}" VerticalAlignment="Top">
 		<TextBlock Text="{Binding Date}" Margin="5" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-		<CheckBox IsChecked="{Binding Outbound}" Content="Outbound" Margin="5"/>
+        <CheckBox IsChecked="{Binding Outbound, Mode=OneWay}" IsEnabled="False" Content="Outbound" Margin="5"/>
             
 	</StackPanel>
 </UserControl>
