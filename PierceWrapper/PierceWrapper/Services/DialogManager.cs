@@ -14,7 +14,10 @@ namespace PierceWrapper.Services
     {
         public void EditContact(Contact contact)
         {
-            throw new NotImplementedException();
+            var dialog = new ContactEditDialog();
+            dialog.DataContext = ForView.Wrap(new ContactEditViewModel(contact));
+
+            dialog.ShowDialog();
         }
     }
 }
