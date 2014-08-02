@@ -4,8 +4,7 @@
         xmlns:v="clr-namespace:PierceWrapper.Views"
         xmlns:a="clr-namespace:Assisticant;assembly=Assisticant.XAML"
         Title="Contact Card" Height="470" Width="525"
-        DataContext="{Binding Source={StaticResource Locator}, Path=ContactCard}"
-        Loaded="Window_Loaded">
+        DataContext="{Binding Source={StaticResource Locator}, Path=ContactCard}">
     <Grid>
         <v:ContactCardView />
     </Grid>

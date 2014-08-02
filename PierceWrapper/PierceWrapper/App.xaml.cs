@@ -27,8 +27,6 @@ namespace PierceWrapper
 
         protected override void OnActivated(EventArgs e)
         {
-            MainWindow.DataContext = _container.Resolve<MainPage>();
-
             base.OnActivated(e);
         }
 

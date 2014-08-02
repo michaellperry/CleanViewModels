@@ -71,6 +71,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainPage.cs" />
+    <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="Views\ContactCardView.xaml.cs">
       <DependentUpon>ContactCardView.xaml</DependentUpon>
     </Compile>
