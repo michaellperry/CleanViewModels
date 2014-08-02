@@ -1,7 +1,7 @@
 ﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="AssisticantBasics.MainWindow"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:Itzben="clr-namespace:Itzben;assembly=Itzben" mc:Ignorable="d" x:Class="AssisticantBasics.MainWindow"
         Title="Assisticant Basics" Height="350" Width="525"
     >
 	<Window.Resources>
@@ -31,7 +31,11 @@
         
 			<TextBlock TextWrapping="Wrap" Text="Items:" Margin="10,10,10,0" Foreground="#FF8F8F8F"/>
         
-			<ListBox ItemsSource="{Binding Items}" ItemTemplate="{DynamicResource ItemHeaderTemplate}" Margin="10" Grid.Row="1" SelectedItem="{Binding SelectedItem}"/>
+			<ListBox ItemsSource="{Binding Items}" ItemTemplate="{DynamicResource ItemHeaderTemplate}" Margin="10" Grid.Row="1" SelectedItem="{Binding SelectedItem}">
+				<i:Interaction.Behaviors>
+					<Itzben:PersistentSelectionBehavior/>
+				</i:Interaction.Behaviors>
+			</ListBox>
 		</Grid>
 		<StackPanel HorizontalAlignment="Left" Height="254" VerticalAlignment="Top" Width="213" Grid.Column="1" DataContext="{Binding ItemDetail}">
 			<TextBlock TextWrapping="Wrap" Text="Name:" Margin="10,10,10,0" Foreground="#FF8F8F8F"/>
