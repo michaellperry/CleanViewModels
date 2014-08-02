@@ -26,5 +26,11 @@ namespace PierceWrapper.Views
         {
             InitializeComponent();
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            ForView.Unwrap<ContactCardViewModel>(DataContext, vm =>
+                vm.Load());
+        }
     }
 }
