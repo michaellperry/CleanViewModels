@@ -15,9 +15,13 @@ namespace PierceWrapper.Services
         public void EditContact(Contact contact)
         {
             var dialog = new ContactEditDialog();
-            dialog.DataContext = ForView.Wrap(new ContactEditViewModel(contact));
+            var temp = Contact.Copy(contact);
+            dialog.DataContext = ForView.Wrap(new ContactEditViewModel(temp));
 
-            dialog.ShowDialog();
+            if (dialog.ShowDialog() ?? false)
+            {
+                temp.CopyTo(contact);
+            }
         }
     }
 }
