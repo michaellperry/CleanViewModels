@@ -14,6 +14,11 @@ namespace PierceWrapper.ViewModels
             _contact = contact;
         }
 
+        public string Display
+        {
+            get { return _contact.Display; }
+        }
+
         public string First
         {
             get { return _contact.First; }
