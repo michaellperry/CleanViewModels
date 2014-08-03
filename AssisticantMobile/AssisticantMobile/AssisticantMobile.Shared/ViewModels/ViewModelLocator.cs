@@ -8,16 +8,25 @@ namespace AssisticantMobile.ViewModels
 {
     public class ViewModelLocator : ViewModelLocatorBase
     {
-        private Topic _topic = new Topic
+        private Topic _topic;
+        private ArticleSelection _articleSelection;
+        private TileUpdater _tileUpdater;
+
+        public ViewModelLocator()
         {
-            Name = "Information Theory"
-        };
+            _topic = new Topic
+            {
+                Name = "Information Theory"
+            };
+            _articleSelection = new ArticleSelection();
+            _tileUpdater = new TileUpdater(_articleSelection);
+        }
 
         public object Topic
         {
             get
             {
-                return ViewModel(() => new TopicViewModel(_topic));
+                return ViewModel(() => new TopicViewModel(_topic, _articleSelection));
             }
         }
     }

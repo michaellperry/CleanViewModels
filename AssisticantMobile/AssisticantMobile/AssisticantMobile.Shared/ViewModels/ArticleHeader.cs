@@ -12,6 +12,11 @@ namespace AssisticantMobile.ViewModels
             _article = article;            
         }
 
+        public Article Article
+        {
+            get { return _article; }
+        }
+
         public string Title
         {
             get { return _article.Title; }
@@ -25,6 +30,23 @@ namespace AssisticantMobile.ViewModels
         public string Date
         {
             get { return String.Format("{0:d}", _article.Date); }
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (this == obj)
+                return true;
+
+            var that = obj as ArticleHeader;
+            if (that == null)
+                return false;
+
+            return Object.Equals(this._article, that._article);
+        }
+
+        public override int GetHashCode()
+        {
+            return _article.GetHashCode();
         }
     }
 }

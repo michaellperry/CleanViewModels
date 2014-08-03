@@ -32,7 +32,7 @@
     		<RowDefinition/>
     	</Grid.RowDefinitions>
     	<TextBlock Text="{Binding Name}" Margin="60,40,40,20" HorizontalAlignment="Left" VerticalAlignment="Top" Style="{StaticResource HeaderTextBlockStyle}" TextWrapping="NoWrap"/>
-    	<GridView ItemTemplate="{StaticResource ArticleHeaderTemplate}" ItemsSource="{Binding Articles}" IsSwipeEnabled="False" SelectionMode="Single" Grid.Row="1"/>
+    	<GridView ItemTemplate="{StaticResource ArticleHeaderTemplate}" ItemsSource="{Binding Articles}" IsSwipeEnabled="False" SelectionMode="Single" Grid.Row="1" SelectedItem="{Binding SelectedArticle, Mode=TwoWay}"/>
 
     </Grid>
 </Page>

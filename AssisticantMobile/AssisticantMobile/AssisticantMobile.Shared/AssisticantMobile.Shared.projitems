@@ -16,9 +16,11 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\Article.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ArticleSelection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\TileDescription.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Publication.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ArticleHeader.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TileViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TileUpdater.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TopicViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ViewModelLocator.cs" />
   </ItemGroup>

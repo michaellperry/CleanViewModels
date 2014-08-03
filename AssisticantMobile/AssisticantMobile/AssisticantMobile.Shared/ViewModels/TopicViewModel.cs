@@ -9,14 +9,17 @@ namespace AssisticantMobile.ViewModels
     public class TopicViewModel
     {
         private readonly Topic _topic;
-
-        public TopicViewModel(Topic topic)
+        private readonly ArticleSelection _selection;
+        
+        public TopicViewModel(Topic topic, ArticleSelection selection)
         {
             _topic = topic;
+            _selection = selection;
         }
 
-        public void Load()
+        public async void Load()
         {
+            await _topic.LoadArticlesAsync();
         }
 
         public string Name
@@ -32,6 +35,22 @@ namespace AssisticantMobile.ViewModels
                     from article in _topic.Articles
                     orderby article.Date
                     select new ArticleHeader(article);
+            }
+        }
+
+        public ArticleHeader SelectedArticle
+        {
+            get
+            {
+                return _selection.SelectedArticle == null
+                    ? null
+                    : new ArticleHeader(_selection.SelectedArticle);
+            }
+            set
+            {
+                _selection.SelectedArticle = value == null
+                    ? null
+                    : value.Article;
             }
         }
     }

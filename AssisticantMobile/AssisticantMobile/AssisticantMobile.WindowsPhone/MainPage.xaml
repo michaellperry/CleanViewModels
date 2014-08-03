@@ -33,7 +33,7 @@
     		<RowDefinition/>
     	</Grid.RowDefinitions>
     	<TextBlock Text="{Binding Name}" Style="{StaticResource HeaderTextBlockStyle}" Margin="10"/>
-    	<ListView ItemTemplate="{StaticResource ArticleHeaderTemplate}" ItemsSource="{Binding Articles}" Grid.Row="1"/>
+    	<ListView ItemTemplate="{StaticResource ArticleHeaderTemplate}" ItemsSource="{Binding Articles}" Grid.Row="1" SelectedItem="{Binding SelectedArticle, Mode=TwoWay}"/>
 
     </Grid>
 </Page>
