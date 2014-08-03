@@ -1,4 +1,5 @@
 ﻿using Autofac;
+using PierceWrapper.Models;
 using PierceWrapper.Screens;
 using PierceWrapper.Services;
 using System;
@@ -36,6 +37,7 @@ namespace PierceWrapper
 
             builder.RegisterType<ContactRepository>();
             builder.RegisterType<DialogManager>();
+            builder.RegisterType<ContactSelection>();
 
             _container = builder.Build();
         }

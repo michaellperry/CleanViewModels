@@ -70,10 +70,15 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\ContactSelection.cs" />
     <Compile Include="Screens\MainScreen.cs" />
+    <Compile Include="ViewModels\ContactSelectionViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Compile Include="Views\ContactCardView.xaml.cs">
       <DependentUpon>ContactCardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContactSelectionView.xaml.cs">
+      <DependentUpon>ContactSelectionView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MeetingControl.xaml.cs">
       <DependentUpon>MeetingControl.xaml</DependentUpon>
@@ -90,6 +95,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ContactEditDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ContactSelectionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

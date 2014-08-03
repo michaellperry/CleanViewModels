@@ -13,7 +13,7 @@ namespace PierceWrapper.ViewModels
             get
             {
                 return ViewModel(() => new ContactCardViewModel(
-                    _repository, _dialogManager, 42));
+                    _repository, _dialogManager, 1));
             }
         }
     }

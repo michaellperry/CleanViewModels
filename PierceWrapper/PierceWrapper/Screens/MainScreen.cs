@@ -1,12 +1,6 @@
 ﻿using Assisticant;
-using PierceWrapper.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PierceWrapper.Models;
 using PierceWrapper.Services;
-using Assisticant.Fields;
 
 namespace PierceWrapper.Screens
 {
@@ -14,15 +8,16 @@ namespace PierceWrapper.Screens
     {
         private readonly ContactRepository _repository;
         private readonly DialogManager _dialogManager;
-
-        private Observable<int> _contactId = new Observable<int>(42);
-
+        private readonly ContactSelection _contactSelection;
+        
         public MainScreen(
             ContactRepository repository,
-            DialogManager dialogManager)
+            DialogManager dialogManager,
+            ContactSelection contactSelection)
         {
             _repository = repository;
             _dialogManager = dialogManager;
+            _contactSelection = contactSelection;
         }
     }
 }
