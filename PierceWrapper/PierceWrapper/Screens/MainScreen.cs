@@ -17,7 +17,9 @@ namespace PierceWrapper.Screens
 
         private Observable<int> _contactId = new Observable<int>(42);
 
-        public MainScreen(ContactRepository repository, DialogManager dialogManager)
+        public MainScreen(
+            ContactRepository repository,
+            DialogManager dialogManager)
         {
             _repository = repository;
             _dialogManager = dialogManager;
