@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace PierceWrapper.ViewModels
 {
-    public class ContactSelectionViewModel
+    public class ContactSelectorViewModel
     {
         private readonly ContactSelection _selection;
 
-        public ContactSelectionViewModel(ContactSelection selection)
+        public ContactSelectorViewModel(ContactSelection selection)
         {
             _selection = selection;
         }

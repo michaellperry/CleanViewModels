@@ -18,9 +18,9 @@ namespace PierceWrapper.Views
     /// <summary>
     /// Interaction logic for ContactSelectionView.xaml
     /// </summary>
-    public partial class ContactSelectionView : UserControl
+    public partial class ContactSelectorView : UserControl
     {
-        public ContactSelectionView()
+        public ContactSelectorView()
         {
             InitializeComponent();
         }
