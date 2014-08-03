@@ -5,7 +5,7 @@ using PierceWrapper.ViewModels;
 
 namespace PierceWrapper.Screens
 {
-    public class MainScreen
+    public class MainScreen : ViewModelLocatorBase
     {
         private readonly ContactRepository _repository;
         private readonly DialogManager _dialogManager;
@@ -25,10 +25,19 @@ namespace PierceWrapper.Screens
         {
             get
             {
-                return ForView.Wrap(new ContactCardViewModel(
+                return ViewModel(() => new ContactCardViewModel(
                     _repository,
                     _dialogManager,
                     _contactSelection.ContactId));
+            }
+        }
+
+        public object Selector
+        {
+            get
+            {
+                return ForView.Wrap(new ContactSelectorViewModel(
+                    _contactSelection));
             }
         }
     }

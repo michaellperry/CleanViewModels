@@ -17,5 +17,8 @@
         <DataTemplate DataType="{x:Type vm:ContactCardViewModel}">
             <v:ContactCardView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ContactSelectorViewModel}">
+            <v:ContactSelectorView />
+        </DataTemplate>
     </Application.Resources>
 </Application>
