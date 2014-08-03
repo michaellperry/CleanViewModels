@@ -1,0 +1,14 @@
+﻿<ViewModels:TopicViewModel xmlns:ViewModels="using:AssisticantMobile.ViewModels" Name="Nam class">
+	<ViewModels:TopicViewModel.Articles>
+		<ViewModels:ArticleHeader Author="Aaberg, Jesper" Date="November 5, 2003" Title="Vestibulum maecenas adipiscing"/>
+		<ViewModels:ArticleHeader Author="Adams, Ellen" Date="December 29, 2006" Title="Mauris quisque dis est vestibulum"/>
+		<ViewModels:ArticleHeader Author="Adams, Terry" Date="January 19, 2004" Title="Dictumst duis eleifend"/>
+		<ViewModels:ArticleHeader Author="Adams, Terry" Date="December 22, 2007" Title="Habitant amet blandit ante inceptos"/>
+		<ViewModels:ArticleHeader Author="Pfeiffer, Michael" Date="August 23, 2003" Title="Parturient conubia"/>
+		<ViewModels:ArticleHeader Author="Philips, Carol" Date="May 27, 2007" Title="Cursus leo"/>
+		<ViewModels:ArticleHeader Author="Poe, Toni" Date="May 24, 2006" Title="Nascetur pharetra mus"/>
+		<ViewModels:ArticleHeader Author="Hicks, Cassie" Date="September 19, 2004" Title="Nec placerat hendrerit enim"/>
+		<ViewModels:ArticleHeader Author="Argentiero, Luca" Date="August 10, 2003" Title="Nulla imperdiet erat proin"/>
+		<ViewModels:ArticleHeader Author="Perry, Brian" Date="September 20, 2007" Title="Porttitor gravida senectus lectus nisi"/>
+	</ViewModels:TopicViewModel.Articles>
+</ViewModels:TopicViewModel>

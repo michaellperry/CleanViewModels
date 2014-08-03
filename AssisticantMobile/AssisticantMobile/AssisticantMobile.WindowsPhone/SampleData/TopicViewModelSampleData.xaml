@@ -1,0 +1,14 @@
+﻿<ViewModels:TopicViewModel xmlns:ViewModels="using:AssisticantMobile.ViewModels" Name="Nam aenean">
+	<ViewModels:TopicViewModel.Articles>
+		<ViewModels:ArticleHeader Author="Aaberg, Jesper" Date="November 5, 2003" Title="Mauris vestibulum cras"/>
+		<ViewModels:ArticleHeader Author="Adams, Ellen" Date="December 29, 2006" Title="Donec parturient"/>
+		<ViewModels:ArticleHeader Author="Adams, Terry" Date="January 19, 2004" Title="Etiam maecenas dis"/>
+		<ViewModels:ArticleHeader Author="Adams, Terry" Date="December 22, 2007" Title="Fusce aliquam"/>
+		<ViewModels:ArticleHeader Author="Pfeiffer, Michael" Date="August 23, 2003" Title="Morbi elementum nulla"/>
+		<ViewModels:ArticleHeader Author="Philips, Carol" Date="May 27, 2007" Title="Bibendum mus"/>
+		<ViewModels:ArticleHeader Author="Poe, Toni" Date="May 24, 2006" Title="Adipiscing dapibus dolor"/>
+		<ViewModels:ArticleHeader Author="Hicks, Cassie" Date="September 19, 2004" Title="Cursus elit facilisi himenaeos"/>
+		<ViewModels:ArticleHeader Author="Argentiero, Luca" Date="August 10, 2003" Title="Porttitor tincidunt"/>
+		<ViewModels:ArticleHeader Author="Perry, Brian" Date="September 20, 2007" Title="Sed eros justo"/>
+	</ViewModels:TopicViewModel.Articles>
+</ViewModels:TopicViewModel>

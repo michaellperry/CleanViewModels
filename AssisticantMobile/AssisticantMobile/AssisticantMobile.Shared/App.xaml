@@ -2,6 +2,9 @@
     x:Class="AssisticantMobile.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:AssisticantMobile.ViewModels"
     xmlns:local="using:AssisticantMobile">
-
+    <Application.Resources>
+        <vm:ViewModelLocator x:Key="Locator" />        
+    </Application.Resources>
 </Application>
