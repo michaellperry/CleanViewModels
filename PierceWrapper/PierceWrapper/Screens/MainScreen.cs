@@ -1,6 +1,7 @@
 ﻿using Assisticant;
 using PierceWrapper.Models;
 using PierceWrapper.Services;
+using PierceWrapper.ViewModels;
 
 namespace PierceWrapper.Screens
 {
