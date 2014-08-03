@@ -5,7 +5,6 @@
              xmlns:v="clr-namespace:PierceWrapper.Views"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <vm:ViewModelLocator x:Key="Locator"/>
         <DataTemplate DataType="{x:Type vm:EmailMessageViewModel}">
             <v:EmailMessageControl />
         </DataTemplate>
@@ -14,6 +13,9 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type vm:PhoneCallViewModel}">
             <v:PhoneCallControl />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ContactCardViewModel}">
+            <v:ContactCardView />
         </DataTemplate>
     </Application.Resources>
 </Application>

@@ -28,6 +28,8 @@ namespace PierceWrapper
 
         protected override void OnActivated(EventArgs e)
         {
+            MainWindow.DataContext = _container.Resolve<MainScreen>();
+
             base.OnActivated(e);
         }
 
@@ -38,6 +40,7 @@ namespace PierceWrapper
             builder.RegisterType<ContactRepository>();
             builder.RegisterType<DialogManager>();
             builder.RegisterType<ContactSelection>();
+            builder.RegisterType<MainScreen>();
 
             _container = builder.Build();
         }

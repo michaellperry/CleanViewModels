@@ -3,9 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:v="clr-namespace:PierceWrapper.Views"
         xmlns:a="clr-namespace:Assisticant;assembly=Assisticant.XAML"
-        Title="Contact Card" Height="470" Width="525"
-        DataContext="{Binding Source={StaticResource Locator}, Path=ContactCard}">
+        Title="Contact Card" Height="470" Width="525">
     <Grid>
-        <v:ContactCardView />
+        <ContentPresenter Content="{Binding Content}">
+            <ContentPresenter.ContentTemplateSelector>
+                <a:ViewSelector />
+            </ContentPresenter.ContentTemplateSelector>
+        </ContentPresenter>
     </Grid>
 </Window>

@@ -20,5 +20,16 @@ namespace PierceWrapper.Screens
             _dialogManager = dialogManager;
             _contactSelection = contactSelection;
         }
+
+        public object Content
+        {
+            get
+            {
+                return ForView.Wrap(new ContactCardViewModel(
+                    _repository,
+                    _dialogManager,
+                    _contactSelection.ContactId));
+            }
+        }
     }
 }
