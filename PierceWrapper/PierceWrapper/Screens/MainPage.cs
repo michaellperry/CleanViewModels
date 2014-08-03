@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 using PierceWrapper.Services;
 using Assisticant.Fields;
 
-namespace PierceWrapper.Pages
+namespace PierceWrapper.Screens
 {
-    public class MainPage
+    public class MainScreen
     {
         private readonly ContactRepository _repository;
         private readonly DialogManager _dialogManager;
 
         private Observable<int> _contactId = new Observable<int>(42);
 
-        public MainPage(ContactRepository repository, DialogManager dialogManager)
+        public MainScreen(ContactRepository repository, DialogManager dialogManager)
         {
             _repository = repository;
             _dialogManager = dialogManager;
