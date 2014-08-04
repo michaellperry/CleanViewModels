@@ -12,14 +12,9 @@ namespace AssisticantMobile.ViewModels
     {
         private readonly ArticleSelection _selection;
 
-        private Computed<TileDescription> _liveTile;
-
         public TileUpdater(ArticleSelection selection)
         {
             _selection = selection;
-
-            _liveTile = new Computed<TileDescription>(ComputeTileDescription);
-            _liveTile.Subscribe(UpdateLiveTile);
         }
 
         private TileDescription ComputeTileDescription()
