@@ -4,6 +4,7 @@ using AssisticantMobile.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Windows.Devices.Geolocation;
 
 namespace AssisticantMobile.ViewModels
