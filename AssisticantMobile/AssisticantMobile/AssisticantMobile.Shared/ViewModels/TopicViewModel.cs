@@ -33,6 +33,7 @@ namespace AssisticantMobile.ViewModels
             try
             {
                 _busy.Value = true;
+
                 await _topic.LoadArticlesAsync();
             }
             catch (Exception ex)
@@ -91,11 +92,6 @@ namespace AssisticantMobile.ViewModels
         public bool Busy
         {
             get { return _busy; }
-        }
-        
-        public Exception LastException
-        {
-            get { return _lastException; }
         }
     }
 }
