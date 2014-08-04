@@ -15,6 +15,8 @@ namespace AssisticantMobile.ViewModels
         private readonly ArticleSelection _selection;
         private readonly ILocationService _location;
 
+        private Computed<Geocoordinate> _coordinate;
+
         private Observable<bool> _busy = new Observable<bool>(default(bool));
         private Observable<Exception> _lastException = new Observable<Exception>(default(Exception));
 
@@ -26,6 +28,11 @@ namespace AssisticantMobile.ViewModels
             _topic = topic;
             _selection = selection;
             _location = location;
+
+            _coordinate = new Computed<Geocoordinate>(
+                () => _location.Coordinate);
+            _coordinate.Subscribe(
+                c => FindPeopleByLocation(c));
         }
 
         public async void Load()
@@ -36,6 +43,25 @@ namespace AssisticantMobile.ViewModels
                 _busy.Value = true;
 
                 await _topic.LoadArticlesAsync();
+            }
+            catch (Exception ex)
+            {
+                _lastException.Value = ex;
+            }
+            finally
+            {
+                _busy.Value = false;
+            }
+        }
+
+        private async void FindPeopleByLocation(Geocoordinate coordinate)
+        {
+            try
+            {
+                _lastException.Value = null;
+                _busy.Value = true;
+
+                await _topic.FindPeopleByLocationAsync(coordinate);
             }
             catch (Exception ex)
             {

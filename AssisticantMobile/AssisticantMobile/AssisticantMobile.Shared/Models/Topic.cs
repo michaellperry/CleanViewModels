@@ -49,7 +49,9 @@ namespace AssisticantMobile.Models
 
         public async Task FindPeopleByLocationAsync(Geocoordinate coordinate)
         {
-            throw new NotImplementedException();
+            await Task.Delay(1000);
+
+            // Load people into the topic here.
         }
     }
 }
