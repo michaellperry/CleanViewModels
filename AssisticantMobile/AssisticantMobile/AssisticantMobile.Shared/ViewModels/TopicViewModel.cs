@@ -32,6 +32,7 @@ namespace AssisticantMobile.ViewModels
         {
             try
             {
+                _lastException.Value = null;
                 _busy.Value = true;
 
                 await _topic.LoadArticlesAsync();
@@ -43,6 +44,21 @@ namespace AssisticantMobile.ViewModels
             finally
             {
                 _busy.Value = false;
+            }
+        }
+
+        public bool HasError
+        {
+            get { return _lastException.Value != null; }
+        }
+
+        public string Error
+        {
+            get
+            {
+                return _lastException.Value == null
+                    ? null
+                    : _lastException.Value.Message;
             }
         }
 
