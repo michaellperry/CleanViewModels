@@ -24,6 +24,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ArticleHeader.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TileUpdater.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TopicViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AsynchronousViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ViewModelLocator.cs" />
   </ItemGroup>
 </Project>
