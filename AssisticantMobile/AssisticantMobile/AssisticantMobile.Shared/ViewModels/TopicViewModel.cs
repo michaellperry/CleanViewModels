@@ -1,4 +1,5 @@
-﻿using AssisticantMobile.Models;
+﻿using Assisticant.Fields;
+using AssisticantMobile.Models;
 using AssisticantMobile.Services;
 using System;
 using System.Collections.Generic;
