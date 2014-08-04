@@ -1,8 +1,6 @@
 ﻿using Assisticant;
 using AssisticantMobile.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using AssisticantMobile.Services;
 
 namespace AssisticantMobile.ViewModels
 {
@@ -11,6 +9,7 @@ namespace AssisticantMobile.ViewModels
         private Topic _topic;
         private ArticleSelection _articleSelection;
         private TileUpdater _tileUpdater;
+        private GpsLocationService _location;
 
         public ViewModelLocator()
         {
@@ -20,13 +19,17 @@ namespace AssisticantMobile.ViewModels
             };
             _articleSelection = new ArticleSelection();
             _tileUpdater = new TileUpdater(_articleSelection);
+            _location = new GpsLocationService();
         }
 
         public object Topic
         {
             get
             {
-                return ViewModel(() => new TopicViewModel(_topic, _articleSelection));
+                return ViewModel(() => new TopicViewModel(
+                    _topic,
+                    _articleSelection,
+                    _location));
             }
         }
     }

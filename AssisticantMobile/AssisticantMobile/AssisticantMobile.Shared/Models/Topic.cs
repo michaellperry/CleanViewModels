@@ -3,6 +3,7 @@ using Assisticant.Fields;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Windows.Devices.Geolocation;
 
 namespace AssisticantMobile.Models
 {
@@ -44,6 +45,11 @@ namespace AssisticantMobile.Models
                 Title = "Digital Compression for Multimedia: Principles and Standards",
                 Date = new DateTime(1998, 12, 3)
             });
+        }
+
+        public async Task FindPeopleByLocationAsync(Geocoordinate coordinate)
+        {
+            throw new NotImplementedException();
         }
     }
 }

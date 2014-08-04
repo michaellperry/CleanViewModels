@@ -18,7 +18,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\Article.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ArticleSelection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\TileDescription.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Publication.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Topic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ILocationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\GpsLocationService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ArticleHeader.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TileUpdater.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TopicViewModel.cs" />

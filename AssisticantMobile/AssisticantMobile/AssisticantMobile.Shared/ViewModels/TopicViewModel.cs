@@ -1,5 +1,5 @@
-﻿using Assisticant.Fields;
-using AssisticantMobile.Models;
+﻿using AssisticantMobile.Models;
+using AssisticantMobile.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +10,16 @@ namespace AssisticantMobile.ViewModels
     {
         private readonly Topic _topic;
         private readonly ArticleSelection _selection;
+        private readonly ILocationService _location;
         
-        public TopicViewModel(Topic topic, ArticleSelection selection)
+        public TopicViewModel(
+            Topic topic,
+            ArticleSelection selection,
+            ILocationService location)
         {
             _topic = topic;
             _selection = selection;
+            _location = location;
         }
 
         public void Load()
@@ -24,6 +29,17 @@ namespace AssisticantMobile.ViewModels
         public string Name
         {
             get { return _topic.Name; }
+        }
+
+        public string Location
+        {
+            get
+            {
+                var coordinate = _location.Coordinate;
+                return coordinate == null
+                    ? null
+                    : String.Format("{0}, {1}", coordinate.Latitude, coordinate.Longitude);
+            }
         }
 
         public IEnumerable<ArticleHeader> Articles
