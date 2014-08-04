@@ -17,9 +17,8 @@ namespace AssisticantMobile.ViewModels
             _selection = selection;
         }
 
-        public async void Load()
+        public void Load()
         {
-            await _topic.LoadArticlesAsync();
         }
 
         public string Name
