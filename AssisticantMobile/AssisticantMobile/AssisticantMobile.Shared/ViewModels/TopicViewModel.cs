@@ -14,7 +14,10 @@ namespace AssisticantMobile.ViewModels
         private readonly Topic _topic;
         private readonly ArticleSelection _selection;
         private readonly ILocationService _location;
-        
+
+        private Observable<bool> _busy = new Observable<bool>(default(bool));
+        private Observable<Exception> _lastException = new Observable<Exception>(default(Exception));
+
         public TopicViewModel(
             Topic topic,
             ArticleSelection selection,
@@ -25,8 +28,21 @@ namespace AssisticantMobile.ViewModels
             _location = location;
         }
 
-        public void Load()
+        public async void Load()
         {
+            try
+            {
+                _busy.Value = true;
+                await _topic.LoadArticlesAsync();
+            }
+            catch (Exception ex)
+            {
+                _lastException.Value = ex;
+            }
+            finally
+            {
+                _busy.Value = false;
+            }
         }
 
         public string Name
@@ -70,6 +86,16 @@ namespace AssisticantMobile.ViewModels
                     ? null
                     : value.Article;
             }
+        }
+
+        public bool Busy
+        {
+            get { return _busy; }
+        }
+        
+        public Exception LastException
+        {
+            get { return _lastException; }
         }
     }
 }

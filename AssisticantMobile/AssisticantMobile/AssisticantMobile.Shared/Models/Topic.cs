@@ -27,6 +27,8 @@ namespace AssisticantMobile.Models
         {
             await Task.Delay(2000);
 
+            throw new Exception("Network exception has occurred.");
+
             _articles.Add(new Article
             {
                 Author = "Jaynes, E. T.",
