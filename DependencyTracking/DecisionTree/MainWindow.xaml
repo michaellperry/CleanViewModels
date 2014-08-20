@@ -50,24 +50,41 @@
             <StackPanel Orientation="Horizontal">
                 <ContentPresenter ContentTemplateSelector="{DynamicResource ViewSelector}" Content="{Binding Node}"/>
                 <TextBlock Text="{Binding Label}" Style="{DynamicResource LabelStyle}" />
-                <TextBlock Text="{Binding ExpectedValue}" Style="{DynamicResource ExpectedValueStyle}" />
+                <TextBlock x:Name="ExpectedValue" Text="{Binding ExpectedValue}" Style="{DynamicResource ExpectedValueStyle}" />
             </StackPanel>
+            <HierarchicalDataTemplate.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsSelected}" Value="True">
+                    <Setter TargetName="ExpectedValue" Property="Foreground" Value="White"/>
+                </DataTrigger>
+            </HierarchicalDataTemplate.Triggers>
         </HierarchicalDataTemplate>
         <HierarchicalDataTemplate DataType="{x:Type vm:OptionNodeHeader}" ItemsSource="{Binding Children}">
             <StackPanel Orientation="Horizontal">
                 <ContentPresenter ContentTemplateSelector="{DynamicResource ViewSelector}" Content="{Binding Node}"/>
                 <TextBlock Text="{Binding Label}" Style="{DynamicResource LabelStyle}" />
-                <TextBlock Text="{Binding Cost}" Style="{DynamicResource CostStyle}" />
-                <TextBlock Text="{Binding ExpectedValue}" Style="{DynamicResource ExpectedValueStyle}" />
+                <TextBlock x:Name="Cost" Text="{Binding Cost}" Style="{DynamicResource CostStyle}" />
+                <TextBlock x:Name="ExpectedValue" Text="{Binding ExpectedValue}" Style="{DynamicResource ExpectedValueStyle}" />
             </StackPanel>
+            <HierarchicalDataTemplate.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsSelected}" Value="True">
+                    <Setter TargetName="Cost" Property="Foreground" Value="White"/>
+                    <Setter TargetName="ExpectedValue" Property="Foreground" Value="White"/>
+                </DataTrigger>
+            </HierarchicalDataTemplate.Triggers>
         </HierarchicalDataTemplate>
         <HierarchicalDataTemplate DataType="{x:Type vm:ChanceNodeHeader}" ItemsSource="{Binding Children}">
             <StackPanel Orientation="Horizontal">
                 <ContentPresenter ContentTemplateSelector="{DynamicResource ViewSelector}" Content="{Binding Node}"/>
                 <TextBlock Text="{Binding Label}" Style="{DynamicResource LabelStyle}" />
-                <TextBlock Text="{Binding Weight}" Style="{DynamicResource WeightStyle}" />
-                <TextBlock Text="{Binding ExpectedValue}" Style="{DynamicResource ExpectedValueStyle}" />
+                <TextBlock x:Name="Weight" Text="{Binding Weight}" Style="{DynamicResource WeightStyle}" />
+                <TextBlock x:Name="ExpectedValue" Text="{Binding ExpectedValue}" Style="{DynamicResource ExpectedValueStyle}" />
             </StackPanel>
+            <HierarchicalDataTemplate.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsSelected}" Value="True">
+                    <Setter TargetName="Weight" Property="Foreground" Value="White"/>
+                    <Setter TargetName="ExpectedValue" Property="Foreground" Value="White"/>
+                </DataTrigger>
+            </HierarchicalDataTemplate.Triggers>
         </HierarchicalDataTemplate>
         <Style TargetType="{x:Type TreeViewItem}">
             <Setter Property="IsExpanded" Value="True" />
