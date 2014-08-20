@@ -13,7 +13,7 @@ namespace DecisionTree.Models
             set { _expectedValue.Value = value; }
         }
 
-        public IEnumerable<IPath> Children
+        public IEnumerable<IPath> Paths
         {
             get { yield break; }
         }

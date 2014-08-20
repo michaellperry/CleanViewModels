@@ -29,7 +29,7 @@ namespace DecisionTree.ViewModels
             get
             {
                 return
-                    from child in _path.Child.Children
+                    from child in _path.Child.Paths
                     select new NodeHeader(child);
             }
         }

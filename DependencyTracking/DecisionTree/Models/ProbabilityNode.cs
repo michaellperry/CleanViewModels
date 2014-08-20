@@ -18,7 +18,7 @@ namespace DecisionTree.Models
             get { return _paths.Sum(p => p.Weight * p.Child.ExpectedValue); }
         }
 
-        public IEnumerable<IPath> Children
+        public IEnumerable<IPath> Paths
         {
             get { return _paths; }
         }
