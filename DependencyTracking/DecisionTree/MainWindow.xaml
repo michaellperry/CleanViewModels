@@ -12,23 +12,38 @@
         <DataTemplate DataType="{x:Type m:ChoiceNode}">
             <Viewbox>
                 <Canvas Height="10" Width="10">
-            		<Rectangle Width="6.042" Height="6.042" Fill="#721616" Canvas.Left="1.979" Canvas.Top="1.979"/>
+            		<Rectangle x:Name="Symbol" Width="6.042" Height="6.042" Fill="#721616" Canvas.Left="1.979" Canvas.Top="1.979"/>
             	</Canvas>
             </Viewbox>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsSelected}" Value="True">
+                    <Setter TargetName="Symbol" Property="Fill" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                </DataTrigger>
+            </DataTemplate.Triggers>
         </DataTemplate>
         <DataTemplate DataType="{x:Type m:ProbabilityNode}">
             <Viewbox>
                 <Canvas Height="10" Width="10">
-            		<Ellipse Width="7.624" Height="7.624" Fill="#127912" Canvas.Left="1.188" Canvas.Top="1.188"/>
+            		<Ellipse x:Name="Symbol" Width="7.624" Height="7.624" Fill="#127912" Canvas.Left="1.188" Canvas.Top="1.188"/>
             	</Canvas>
             </Viewbox>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsSelected}" Value="True">
+                    <Setter TargetName="Symbol" Property="Fill" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                </DataTrigger>
+            </DataTemplate.Triggers>
         </DataTemplate>
         <DataTemplate DataType="{x:Type m:OutcomeNode}">
             <Viewbox>
                 <Canvas Height="10.171" Width="7.74">
-            		<Path Data="M0.49174139,5.3126628 L8.2310753,10.397055 8.2182412,0.22827089" Fill="#5E0A53" HorizontalAlignment="Left" Height="10.171" Margin="0" Stretch="Fill" VerticalAlignment="Top" Width="7.74"/>
+            		<Path x:Name="Symbol" Data="M0.49174139,5.3126628 L8.2310753,10.397055 8.2182412,0.22827089" Fill="#5E0A53" HorizontalAlignment="Left" Height="10.171" Margin="0" Stretch="Fill" VerticalAlignment="Top" Width="7.74"/>
             	</Canvas>
             </Viewbox>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsSelected}" Value="True">
+                    <Setter TargetName="Symbol" Property="Fill" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                </DataTrigger>
+            </DataTemplate.Triggers>
         </DataTemplate>
         <Style x:Key="LabelStyle" TargetType="{x:Type TextBlock}">
         	<Setter Property="FontWeight" Value="Bold"/>
