@@ -8,7 +8,7 @@
         DataContext="{Binding Main, Source={StaticResource Locator}}">
     <Window.Resources>
         <a:ViewSelector x:Key="ViewSelector"/>
-        <DataTemplate DataType="m:ChoiceNode">
+        <DataTemplate DataType="{x:Type m:ChoiceNode}">
             <Viewbox>
                 <Rectangle Width="10" Height="10" Fill="#000000"/>
             </Viewbox>
