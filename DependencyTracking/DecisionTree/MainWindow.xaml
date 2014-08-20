@@ -44,7 +44,7 @@
         </Style>
         <Style x:Key="ExpectedValueStyle" TargetType="{x:Type TextBlock}">
         	<Setter Property="Foreground" Value="#000099"/>
-        	<Setter Property="Margin" Value="5,0,0,0"/>
+        	<Setter Property="Margin" Value="5,0,5,0"/>
         </Style>
         <HierarchicalDataTemplate DataType="{x:Type vm:RootNodeHeader}" ItemsSource="{Binding Children}">
             <StackPanel Orientation="Horizontal">
@@ -54,7 +54,7 @@
             </StackPanel>
             <HierarchicalDataTemplate.Triggers>
                 <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsSelected}" Value="True">
-                    <Setter TargetName="ExpectedValue" Property="Foreground" Value="White"/>
+                    <Setter TargetName="ExpectedValue" Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
                 </DataTrigger>
             </HierarchicalDataTemplate.Triggers>
         </HierarchicalDataTemplate>
@@ -67,8 +67,8 @@
             </StackPanel>
             <HierarchicalDataTemplate.Triggers>
                 <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsSelected}" Value="True">
-                    <Setter TargetName="Cost" Property="Foreground" Value="White"/>
-                    <Setter TargetName="ExpectedValue" Property="Foreground" Value="White"/>
+                    <Setter TargetName="Cost" Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                    <Setter TargetName="ExpectedValue" Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
                 </DataTrigger>
             </HierarchicalDataTemplate.Triggers>
         </HierarchicalDataTemplate>
@@ -81,8 +81,8 @@
             </StackPanel>
             <HierarchicalDataTemplate.Triggers>
                 <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsSelected}" Value="True">
-                    <Setter TargetName="Weight" Property="Foreground" Value="White"/>
-                    <Setter TargetName="ExpectedValue" Property="Foreground" Value="White"/>
+                    <Setter TargetName="Weight" Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                    <Setter TargetName="ExpectedValue" Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
                 </DataTrigger>
             </HierarchicalDataTemplate.Triggers>
         </HierarchicalDataTemplate>
