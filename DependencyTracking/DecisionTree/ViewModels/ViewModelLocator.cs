@@ -55,14 +55,14 @@ namespace DecisionTree.ViewModels
                 .AddChance(0.40f, failure);
             informed.Label = "Informed";
 
-            var test = new ChoiceNode()
+            var marketResearch = new ChoiceNode()
                 .AddOption(3000.0f, informed)
                 .AddOption(0.0f, uninformed);
-            test.Label = "Test";
+            marketResearch.Label = "Market Research";
 
             return new Root
             {
-                Child = test
+                Child = marketResearch
             };
         }
     }

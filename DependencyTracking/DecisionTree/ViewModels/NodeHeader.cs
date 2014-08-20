@@ -5,28 +5,18 @@ using System.Linq;
 
 namespace DecisionTree.ViewModels
 {
-    public class NodeHeader
+    public abstract class NodeHeader
     {
-        private readonly IPath _path;
-
-        public NodeHeader(IPath path)
-        {
-            _path = path;
-        }
-
-        public IPath Path
-        {
-            get { return _path; }
-        }
+        public abstract IPath Path { get; }
 
         public string Label
         {
-            get { return _path.Child.Label; }
+            get { return Path.Child.Label; }
         }
 
         public string ExpectedValue
         {
-            get { return String.Format("{0:0.00}", _path.Child.ExpectedValue); }
+            get { return String.Format("{0:#,0.}", Path.Child.ExpectedValue); }
         }
 
         public IEnumerable<NodeHeader> Children
@@ -34,8 +24,8 @@ namespace DecisionTree.ViewModels
             get
             {
                 return
-                    from child in _path.Child.Paths
-                    select new NodeHeader(child);
+                    from child in Path.Child.Paths
+                    select NodeHeader.ForPath(child);
             }
         }
 
@@ -46,12 +36,30 @@ namespace DecisionTree.ViewModels
             NodeHeader that = obj as NodeHeader;
             if (that == null)
                 return false;
-            return Object.Equals(this._path, that._path);
+            return Object.Equals(this.Path, that.Path);
         }
 
         public override int GetHashCode()
         {
-            return _path.GetHashCode();
+            return Path.GetHashCode();
+        }
+
+        public static NodeHeader ForPath(IPath path)
+        {
+            return
+                Map<Chance>(path, c => new ChanceNodeHeader(c)) ??
+                Map<Option>(path, o => new OptionNodeHeader(o)) ??
+                Map<Root>  (path, r => new RootNodeHeader(r));
+        }
+
+        private static NodeHeader Map<TPath>(IPath path, Func<TPath, NodeHeader> ctor)
+            where TPath: class, IPath
+        {
+            var specificPath = path as TPath;
+            if (specificPath != null)
+                return ctor(specificPath);
+            else
+                return null;
         }
     }
 }

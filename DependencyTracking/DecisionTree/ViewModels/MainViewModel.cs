@@ -21,7 +21,7 @@ namespace DecisionTree.ViewModels
         {
             get
             {
-                yield return new NodeHeader(_root);
+                yield return NodeHeader.ForPath(_root);
             }
         }
 
@@ -31,7 +31,7 @@ namespace DecisionTree.ViewModels
             {
                 return _selection.SelectedPath == null
                     ? null
-                    : new NodeHeader(_selection.SelectedPath);
+                    : NodeHeader.ForPath(_selection.SelectedPath);
             }
             set
             {
