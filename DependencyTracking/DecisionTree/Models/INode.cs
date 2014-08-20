@@ -5,6 +5,6 @@ namespace DecisionTree.Models
     public interface INode
     {
         float ExpectedValue { get; }
-        IEnumerable<INode> Children { get; }
+        IEnumerable<IPath> Children { get; }
     }
 }

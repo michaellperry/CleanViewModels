@@ -18,9 +18,9 @@ namespace DecisionTree.Models
             get { return _options.Max(o => o.Child.ExpectedValue - o.Cost); }
         }
 
-        public IEnumerable<INode> Children
+        public IEnumerable<IPath> Children
         {
-            get { return _options.Select(o => o.Child); }
+            get { return _options; }
         }
     }
 }

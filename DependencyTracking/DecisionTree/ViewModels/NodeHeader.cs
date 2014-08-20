@@ -7,21 +7,21 @@ namespace DecisionTree.ViewModels
 {
     public class NodeHeader
     {
-        private readonly INode _node;
+        private readonly IPath _path;
 
-        public NodeHeader(INode node)
+        public NodeHeader(IPath path)
         {
-            _node = node;
+            _path = path;
         }
 
-        public INode Node
+        public IPath Path
         {
-            get { return _node; }
+            get { return _path; }
         }
 
         public string ExpectedValue
         {
-            get { return String.Format("{0:0.00}", _node.ExpectedValue); }
+            get { return String.Format("{0:0.00}", _path.Child.ExpectedValue); }
         }
 
         public IEnumerable<NodeHeader> Children
@@ -29,7 +29,7 @@ namespace DecisionTree.ViewModels
             get
             {
                 return
-                    from child in _node.Children
+                    from child in _path.Child.Children
                     select new NodeHeader(child);
             }
         }
@@ -41,12 +41,12 @@ namespace DecisionTree.ViewModels
             NodeHeader that = obj as NodeHeader;
             if (that == null)
                 return false;
-            return Object.Equals(this._node, that._node);
+            return Object.Equals(this._path, that._path);
         }
 
         public override int GetHashCode()
         {
-            return _node.GetHashCode();
+            return _path.GetHashCode();
         }
     }
 }

@@ -2,7 +2,7 @@ using Assisticant.Fields;
 
 namespace DecisionTree.Models
 {
-    public class Path
+    public class Chance : IPath
     {
         private Observable<float> _weight = new Observable<float>();
         private Observable<INode> _child = new Observable<INode>();

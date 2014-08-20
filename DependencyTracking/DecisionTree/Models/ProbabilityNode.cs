@@ -6,9 +6,9 @@ namespace DecisionTree.Models
 {
     public class ProbabilityNode : INode
     {
-        private ObservableList<Path> _paths = new ObservableList<Path>();
+        private ObservableList<Chance> _paths = new ObservableList<Chance>();
 
-        public IEnumerable<Path> Paths
+        public IEnumerable<Chance> Paths
         {
             get { return _paths; }
         }
@@ -18,9 +18,9 @@ namespace DecisionTree.Models
             get { return _paths.Sum(p => p.Weight * p.Child.ExpectedValue); }
         }
 
-        public IEnumerable<INode> Children
+        public IEnumerable<IPath> Children
         {
-            get { return _paths.Select(p => p.Child); }
+            get { return _paths; }
         }
     }
 }

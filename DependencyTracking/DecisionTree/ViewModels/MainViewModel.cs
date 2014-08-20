@@ -8,10 +8,10 @@ namespace DecisionTree.ViewModels
 {
     public class MainViewModel
     {
-        private readonly INode _root;
+        private readonly IPath _root;
 		private readonly Selection _selection;
 
-        public MainViewModel(INode root, Selection selection)
+        public MainViewModel(IPath root, Selection selection)
         {
             _root = root;
 			_selection = selection;
@@ -29,14 +29,14 @@ namespace DecisionTree.ViewModels
         {
             get
             {
-                return _selection.SelectedNode == null
+                return _selection.SelectedPath == null
                     ? null
-                    : new NodeHeader(_selection.SelectedNode);
+                    : new NodeHeader(_selection.SelectedPath);
             }
             set
             {
                 if (value != null)
-                    _selection.SelectedNode = value.Node;
+                    _selection.SelectedPath = value.Path;
             }
         }
     }

@@ -6,7 +6,7 @@ namespace DecisionTree.ViewModels
 {
     public class ViewModelLocator : ViewModelLocatorBase
     {
-        private INode _root;
+        private Root _root;
 		private Selection _selection;
 
         public ViewModelLocator()
@@ -27,19 +27,19 @@ namespace DecisionTree.ViewModels
 		{
 			get
 			{
-				return ViewModel(() => _selection.SelectedNode == null
+				return ViewModel(() => _selection.SelectedPath == null
 					? null
-					: NodeViewModel.ForNode(_selection.SelectedNode));
+					: NodeViewModel.ForPath(_selection.SelectedPath));
 			}
 		}
 
-		private INode LoadDocument()
+		private Root LoadDocument()
 		{
 			// TODO: Load your document here.
             throw new NotImplementedException();
 		}
 
-		private INode LoadDesignModeDocument()
+		private Root LoadDesignModeDocument()
 		{
             throw new NotImplementedException();
         }

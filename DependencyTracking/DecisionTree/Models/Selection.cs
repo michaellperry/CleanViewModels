@@ -4,12 +4,12 @@ namespace DecisionTree.Models
 {
     public class Selection
     {
-        private Observable<INode> _selectedNode = new Observable<INode>(default(INode));
+        private Observable<IPath> _selectedPath = new Observable<IPath>();
 
-        public INode SelectedNode
+        public IPath SelectedPath
         {
-            get { return _selectedNode.Value; }
-            set { _selectedNode.Value = value; }
+            get { return _selectedPath.Value; }
+            set { _selectedPath.Value = value; }
         }
     }
 }
