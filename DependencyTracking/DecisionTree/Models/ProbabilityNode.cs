@@ -6,21 +6,21 @@ namespace DecisionTree.Models
 {
     public class ProbabilityNode : INode
     {
-        private ObservableList<Chance> _paths = new ObservableList<Chance>();
+        private ObservableList<Chance> _chances = new ObservableList<Chance>();
 
-        public IEnumerable<Chance> Paths
+        public IEnumerable<Chance> Chances
         {
-            get { return _paths; }
+            get { return _chances; }
         }
 
         public float ExpectedValue
         {
-            get { return _paths.Sum(p => p.Weight * p.Child.ExpectedValue); }
+            get { return _chances.Sum(p => p.Weight * p.Child.ExpectedValue); }
         }
 
         public IEnumerable<IPath> Paths
         {
-            get { return _paths; }
+            get { return _chances; }
         }
     }
 }
