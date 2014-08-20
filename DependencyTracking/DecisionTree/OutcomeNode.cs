@@ -1,4 +1,5 @@
 ﻿using Assisticant.Fields;
+using System.Collections.Generic;
 
 namespace DecisionTree
 {
@@ -10,6 +11,11 @@ namespace DecisionTree
         {
             get { return _expectedValue; }
             set { _expectedValue.Value = value; }
+        }
+
+        public IEnumerable<INode> Children
+        {
+            get { yield break; }
         }
     }
 }

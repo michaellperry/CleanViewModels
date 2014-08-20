@@ -1,16 +1,15 @@
-using System.Linq;
-using Assisticant.Fields;
+﻿using Assisticant.Fields;
 
 namespace DecisionTree.App.Models
 {
     public class Selection
     {
-        private Observable<Item> _selectedItem = new Observable<Item>();
+        private Observable<INode> _selectedNode = new Observable<INode>(default(INode));
 
-        public Item SelectedItem
+        public INode SelectedNode
         {
-            get { return _selectedItem; }
-            set { _selectedItem.Value = value; }
+            get { return _selectedNode.Value; }
+            set { _selectedNode.Value = value; }
         }
     }
 }

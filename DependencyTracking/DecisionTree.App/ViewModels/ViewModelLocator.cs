@@ -28,7 +28,7 @@ namespace DecisionTree.App.ViewModels
 			{
 				return ViewModel(() => _selection.SelectedItem == null
 					? null
-					: new ItemViewModel(_selection.SelectedItem));
+					: new NodeViewModel(_selection.SelectedItem));
 			}
 		}
 

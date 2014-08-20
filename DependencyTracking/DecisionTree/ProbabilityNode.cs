@@ -17,5 +17,10 @@ namespace DecisionTree
         {
             get { return _paths.Sum(p => p.Weight * p.Child.ExpectedValue); }
         }
+
+        public IEnumerable<INode> Children
+        {
+            get { return _paths.Select(p => p.Child); }
+        }
     }
 }

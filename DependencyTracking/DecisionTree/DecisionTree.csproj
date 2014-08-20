@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChoiceNode.cs" />
+    <Compile Include="Option.cs" />
     <Compile Include="OutcomeNode.cs" />
     <Compile Include="INode.cs" />
     <Compile Include="Path.cs" />
