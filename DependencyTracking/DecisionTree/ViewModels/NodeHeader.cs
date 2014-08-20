@@ -19,6 +19,11 @@ namespace DecisionTree.ViewModels
             get { return String.Format("{0:#,0.}", Path.Child.ExpectedValue); }
         }
 
+        public Node Node
+        {
+            get { return Path.Child; }
+        }
+
         public IEnumerable<NodeHeader> Children
         {
             get
