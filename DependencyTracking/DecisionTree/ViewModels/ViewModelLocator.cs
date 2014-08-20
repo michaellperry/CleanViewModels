@@ -41,19 +41,24 @@ namespace DecisionTree.ViewModels
 
 		private Root LoadDesignModeDocument()
 		{
-            var success = new OutcomeNode { ExpectedValue = 50000.0f };
-            var failure = new OutcomeNode { ExpectedValue = 0.0f };
+            var success = new OutcomeNode { Label = "Success" }
+                .SetExpectedValue(50000.0f);
+            var failure = new OutcomeNode { Label = "Failure" }
+                .SetExpectedValue(0.0f);
 
             var uninformed = new ProbabilityNode()
                 .AddChance(0.30f, success)
                 .AddChance(0.70f, failure);
+            uninformed.Label = "Uninformed";
             var informed = new ProbabilityNode()
                 .AddChance(0.60f, success)
                 .AddChance(0.40f, failure);
+            informed.Label = "Informed";
 
             var test = new ChoiceNode()
                 .AddOption(3000.0f, informed)
                 .AddOption(0.0f, uninformed);
+            test.Label = "Test";
 
             return new Root
             {

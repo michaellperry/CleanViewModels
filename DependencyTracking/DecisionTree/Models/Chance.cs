@@ -5,7 +5,7 @@ namespace DecisionTree.Models
     public class Chance : IPath
     {
         private Observable<float> _weight = new Observable<float>();
-        private Observable<INode> _child = new Observable<INode>();
+        private Observable<Node> _child = new Observable<Node>();
 
         public float Weight
         {
@@ -13,9 +13,9 @@ namespace DecisionTree.Models
             set { _weight.Value = value; }
         }
 
-        public INode Child
+        public Node Child
         {
-            get { return _child.Value; }
+            get { return _child; }
             set { _child.Value = value; }
         }
     }

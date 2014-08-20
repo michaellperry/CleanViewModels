@@ -4,8 +4,8 @@ namespace DecisionTree.Models
 {
     public class Option : IPath
     {
-        private Observable<float> _cost = new Observable<float>(default(float));
-        private Observable<INode> _child = new Observable<INode>(default(INode));
+        private Observable<float> _cost = new Observable<float>();
+        private Observable<Node> _child = new Observable<Node>();
 
         public float Cost
         {
@@ -13,9 +13,9 @@ namespace DecisionTree.Models
             set { _cost.Value = value; }
         }
 
-        public INode Child
+        public Node Child
         {
-            get { return _child.Value; }
+            get { return _child; }
             set { _child.Value = value; }
         }
     }

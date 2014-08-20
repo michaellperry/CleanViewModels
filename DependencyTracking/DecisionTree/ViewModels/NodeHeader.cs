@@ -19,6 +19,11 @@ namespace DecisionTree.ViewModels
             get { return _path; }
         }
 
+        public string Label
+        {
+            get { return _path.Child.Label; }
+        }
+
         public string ExpectedValue
         {
             get { return String.Format("{0:0.00}", _path.Child.ExpectedValue); }

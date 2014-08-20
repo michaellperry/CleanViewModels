@@ -4,22 +4,22 @@ using System.Linq;
 
 namespace DecisionTree.Models
 {
-    public class ChoiceNode : INode
+    public class ChoiceNode : Node
     {
         private ObservableList<Option> _options = new ObservableList<Option>();
 
-        public ChoiceNode AddOption(float cost, INode child)
+        public ChoiceNode AddOption(float cost, Node child)
         {
             _options.Add(new Option { Cost = cost, Child = child });
             return this;
         }
 
-        public float ExpectedValue
+        public override float ExpectedValue
         {
             get { return _options.Max(o => o.Child.ExpectedValue - o.Cost); }
         }
 
-        public IEnumerable<IPath> Paths
+        public override IEnumerable<IPath> Paths
         {
             get { return _options; }
         }

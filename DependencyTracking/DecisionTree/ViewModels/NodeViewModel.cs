@@ -5,7 +5,7 @@ namespace DecisionTree.ViewModels
 {
     public abstract class NodeViewModel
     {
-        public abstract INode Node { get; }
+        public abstract Node Node { get; }
 
         public override bool Equals(object obj)
         {

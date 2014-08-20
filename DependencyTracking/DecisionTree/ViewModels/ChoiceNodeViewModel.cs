@@ -11,7 +11,7 @@ namespace DecisionTree.ViewModels
             _node = node;
         }
 
-        public override INode Node
+        public override Node Node
         {
             get { return _node; }
         }

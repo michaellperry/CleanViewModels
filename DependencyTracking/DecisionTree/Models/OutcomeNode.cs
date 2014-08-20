@@ -3,17 +3,22 @@ using System.Collections.Generic;
 
 namespace DecisionTree.Models
 {
-    public class OutcomeNode : INode
+    public class OutcomeNode : Node
     {
         private Observable<float> _expectedValue = new Observable<float>(default(float));
 
-        public float ExpectedValue
+        public override float ExpectedValue
         {
             get { return _expectedValue; }
-            set { _expectedValue.Value = value; }
         }
 
-        public IEnumerable<IPath> Paths
+        public OutcomeNode SetExpectedValue(float value)
+        {
+            _expectedValue.Value = value;
+            return this;
+        }
+
+        public override IEnumerable<IPath> Paths
         {
             get { yield break; }
         }

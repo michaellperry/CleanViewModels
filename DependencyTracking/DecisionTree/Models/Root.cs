@@ -4,11 +4,11 @@ namespace DecisionTree.Models
 {
     public class Root : IPath
     {
-        private Observable<INode> _child = new Observable<INode>(default(INode));
+        private Observable<Node> _child = new Observable<Node>();
 
-        public INode Child
+        public Node Child
         {
-            get { return _child.Value; }
+            get { return _child; }
             set { _child.Value = value; }
         }
     }

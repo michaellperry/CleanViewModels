@@ -63,8 +63,8 @@
     </ApplicationDefinition>
     <Compile Include="Models\Builder.cs" />
     <Compile Include="Models\ChoiceNode.cs" />
-    <Compile Include="Models\INode.cs" />
     <Compile Include="Models\IPath.cs" />
+    <Compile Include="Models\Node.cs" />
     <Compile Include="Models\Option.cs" />
     <Compile Include="Models\OutcomeNode.cs" />
     <Compile Include="Models\Chance.cs" />

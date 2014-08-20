@@ -4,11 +4,11 @@ using System.Linq;
 
 namespace DecisionTree.Models
 {
-    public class ProbabilityNode : INode
+    public class ProbabilityNode : Node
     {
         private ObservableList<Chance> _chances = new ObservableList<Chance>();
 
-        public ProbabilityNode AddChance(float weight, INode child)
+        public ProbabilityNode AddChance(float weight, Node child)
         {
             _chances.Add(new Chance
             {
@@ -18,12 +18,12 @@ namespace DecisionTree.Models
             return this;
         }
 
-        public float ExpectedValue
+        public override float ExpectedValue
         {
             get { return _chances.Sum(p => p.Weight * p.Child.ExpectedValue); }
         }
 
-        public IEnumerable<IPath> Paths
+        public override IEnumerable<IPath> Paths
         {
             get { return _chances; }
         }
