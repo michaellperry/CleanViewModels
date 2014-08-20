@@ -18,5 +18,10 @@ namespace DecisionTree.ViewModels
         {
             get { return _chance; }
         }
+
+        public string Weight
+        {
+            get { return String.Format("{0}%", _chance.Weight * 100.0f); }
+        }
     }
 }

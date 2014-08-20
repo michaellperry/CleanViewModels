@@ -7,10 +7,39 @@
         DataContext="{Binding Main, Source={StaticResource Locator}}">
     <Window.Resources>
         <a:ViewSelector x:Key="ViewSelector"/>
-        <HierarchicalDataTemplate DataType="{x:Type vm:NodeHeader}" ItemsSource="{Binding Children}">
+        <Style x:Key="LabelStyle" TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="0,0,5,0"/>
+        </Style>
+        <Style x:Key="CostStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#CC0000"/>
+            <Setter Property="Margin" Value="0,0,5,0"/>
+        </Style>
+        <Style x:Key="WeightStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#006600"/>
+            <Setter Property="Margin" Value="0,0,5,0"/>
+        </Style>
+        <Style x:Key="ExpectedValueStyle" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#000099"/>
+        </Style>
+        <HierarchicalDataTemplate DataType="{x:Type vm:RootNodeHeader}" ItemsSource="{Binding Children}">
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="{Binding Label}" FontWeight="Bold" Margin="0,0,5,0" />
-                <TextBlock Text="{Binding ExpectedValue}" />
+                <TextBlock Text="{Binding Label}" Style="{DynamicResource LabelStyle}" />
+                <TextBlock Text="{Binding ExpectedValue}" Style="{DynamicResource ExpectedValueStyle}" />
+            </StackPanel>
+        </HierarchicalDataTemplate>
+        <HierarchicalDataTemplate DataType="{x:Type vm:OptionNodeHeader}" ItemsSource="{Binding Children}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Label}" Style="{DynamicResource LabelStyle}" />
+                <TextBlock Text="{Binding Cost}" Style="{DynamicResource CostStyle}" />
+                <TextBlock Text="{Binding ExpectedValue}" Style="{DynamicResource ExpectedValueStyle}" />
+            </StackPanel>
+        </HierarchicalDataTemplate>
+        <HierarchicalDataTemplate DataType="{x:Type vm:ChanceNodeHeader}" ItemsSource="{Binding Children}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="{Binding Label}" Style="{DynamicResource LabelStyle}" />
+                <TextBlock Text="{Binding Weight}" Style="{DynamicResource WeightStyle}" />
+                <TextBlock Text="{Binding ExpectedValue}" Style="{DynamicResource ExpectedValueStyle}" />
             </StackPanel>
         </HierarchicalDataTemplate>
         <Style TargetType="TreeViewItem">

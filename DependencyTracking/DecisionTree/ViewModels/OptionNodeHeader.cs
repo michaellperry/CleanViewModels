@@ -19,5 +19,10 @@ namespace DecisionTree.ViewModels
         {
             get { return _option; }
         }
+
+        public string Cost
+        {
+            get { return String.Format("{0:#,0}", _option.Cost); }
+        }
     }
 }
