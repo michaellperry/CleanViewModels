@@ -8,9 +8,10 @@ namespace DecisionTree.Models
     {
         private ObservableList<Option> _options = new ObservableList<Option>();
 
-        public IEnumerable<Option> Options
+        public ChoiceNode AddOption(float cost, INode child)
         {
-            get { return _options; }
+            _options.Add(new Option { Cost = cost, Child = child });
+            return this;
         }
 
         public float ExpectedValue

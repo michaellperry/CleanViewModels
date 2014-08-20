@@ -8,9 +8,14 @@ namespace DecisionTree.Models
     {
         private ObservableList<Chance> _chances = new ObservableList<Chance>();
 
-        public IEnumerable<Chance> Chances
+        public ProbabilityNode AddChance(float weight, INode child)
         {
-            get { return _chances; }
+            _chances.Add(new Chance
+            {
+                Weight = weight,
+                Child = child
+            });
+            return this;
         }
 
         public float ExpectedValue

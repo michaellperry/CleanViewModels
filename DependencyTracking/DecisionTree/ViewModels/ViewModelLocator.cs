@@ -36,12 +36,29 @@ namespace DecisionTree.ViewModels
 		private Root LoadDocument()
 		{
 			// TODO: Load your document here.
-            throw new NotImplementedException();
+            return LoadDesignModeDocument();
 		}
 
 		private Root LoadDesignModeDocument()
 		{
-            throw new NotImplementedException();
+            var success = new OutcomeNode { ExpectedValue = 50000.0f };
+            var failure = new OutcomeNode { ExpectedValue = 0.0f };
+
+            var uninformed = new ProbabilityNode()
+                .AddChance(0.30f, success)
+                .AddChance(0.70f, failure);
+            var informed = new ProbabilityNode()
+                .AddChance(0.60f, success)
+                .AddChance(0.40f, failure);
+
+            var test = new ChoiceNode()
+                .AddOption(3000.0f, informed)
+                .AddOption(0.0f, uninformed);
+
+            return new Root
+            {
+                Child = test
+            };
         }
     }
 }

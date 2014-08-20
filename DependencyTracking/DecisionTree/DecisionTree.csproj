@@ -61,6 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Builder.cs" />
     <Compile Include="Models\ChoiceNode.cs" />
     <Compile Include="Models\INode.cs" />
     <Compile Include="Models\IPath.cs" />

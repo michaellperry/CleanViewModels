@@ -4,6 +4,17 @@
         Title="Decision Tree" Height="350" Width="525"
         DataContext="{Binding Main, Source={StaticResource Locator}}">
     <Grid>
-        
+        <TreeView ItemsSource="{Binding Nodes}">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                    <TextBlock Text="{Binding ExpectedValue}" />
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="TreeViewItem">
+                    <Setter Property="IsExpanded" Value="True" />
+                </Style>
+            </TreeView.ItemContainerStyle>
+        </TreeView>
     </Grid>
 </Window>
