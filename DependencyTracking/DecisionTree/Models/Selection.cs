@@ -1,6 +1,6 @@
 ﻿using Assisticant.Fields;
 
-namespace DecisionTree.App.Models
+namespace DecisionTree.Models
 {
     public class Selection
     {

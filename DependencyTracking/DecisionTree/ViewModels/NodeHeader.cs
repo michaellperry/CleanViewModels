@@ -1,8 +1,9 @@
+using DecisionTree.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DecisionTree.App.ViewModels
+namespace DecisionTree.ViewModels
 {
     public class NodeHeader
     {

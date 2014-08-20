@@ -1,10 +1,10 @@
 using Assisticant;
-using DecisionTree.App.Models;
+using DecisionTree.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 
-namespace DecisionTree.App.ViewModels
+namespace DecisionTree.ViewModels
 {
     public class MainViewModel
     {

@@ -1,7 +1,7 @@
-﻿<Application x:Class="DecisionTree.App.App"
+﻿<Application x:Class="DecisionTree.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:vm="clr-namespace:DecisionTree.App.ViewModels"
+             xmlns:vm="clr-namespace:DecisionTree.ViewModels"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <vm:ViewModelLocator x:Key="Locator"/>

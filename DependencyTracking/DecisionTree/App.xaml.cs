@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace DecisionTree.App
+namespace DecisionTree
 {
     /// <summary>
     /// Interaction logic for App.xaml

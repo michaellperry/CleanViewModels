@@ -1,6 +1,7 @@
+using DecisionTree.Models;
 using System;
 
-namespace DecisionTree.App.ViewModels
+namespace DecisionTree.ViewModels
 {
     public abstract class NodeViewModel
     {
@@ -19,6 +20,11 @@ namespace DecisionTree.App.ViewModels
         public override int GetHashCode()
         {
             return Node.GetHashCode();
+        }
+
+        public static NodeViewModel ForNode(INode node)
+        {
+            throw new NotImplementedException();
         }
     }
 }

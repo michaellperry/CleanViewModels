@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DecisionTree
+namespace DecisionTree.Models
 {
     public class ProbabilityNode : INode
     {

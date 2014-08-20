@@ -1,7 +1,7 @@
 ﻿using Assisticant.Fields;
 using System.Collections.Generic;
 
-namespace DecisionTree
+namespace DecisionTree.Models
 {
     public class OutcomeNode : INode
     {

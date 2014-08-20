@@ -1,6 +1,6 @@
 using Assisticant.Fields;
 
-namespace DecisionTree
+namespace DecisionTree.Models
 {
     public class Path
     {

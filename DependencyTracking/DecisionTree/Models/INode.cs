@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace DecisionTree
+namespace DecisionTree.Models
 {
     public interface INode
     {
