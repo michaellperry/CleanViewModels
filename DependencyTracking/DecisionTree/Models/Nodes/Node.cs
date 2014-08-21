@@ -15,14 +15,7 @@ namespace DecisionTree.Models.Nodes
         }
 
 
-        public abstract float ExpectedValue
-        {
-            get;
-        }
-
-        public abstract IEnumerable<Path> Paths
-        {
-            get;
-        }
+        public abstract float ExpectedValue { get; }
+        public abstract IEnumerable<Path> Paths { get; }
     }
 }
