@@ -20,7 +20,7 @@
                 </Canvas>
             </Viewbox>
             <DataTemplate.Triggers>
-                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsSelected}" Value="True">
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsFocused}" Value="True">
                     <Setter TargetName="Symbol" Property="Fill" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
                 </DataTrigger>
             </DataTemplate.Triggers>
@@ -32,7 +32,7 @@
                 </Canvas>
             </Viewbox>
             <DataTemplate.Triggers>
-                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsSelected}" Value="True">
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsFocused}" Value="True">
                     <Setter TargetName="Symbol" Property="Fill" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
                 </DataTrigger>
             </DataTemplate.Triggers>
@@ -44,7 +44,7 @@
                 </Canvas>
             </Viewbox>
             <DataTemplate.Triggers>
-                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsSelected}" Value="True">
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsFocused}" Value="True">
                     <Setter TargetName="Symbol" Property="Fill" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
                 </DataTrigger>
             </DataTemplate.Triggers>
@@ -72,7 +72,7 @@
                 <TextBlock x:Name="ExpectedValue" Text="{Binding ExpectedValue}" Style="{DynamicResource ExpectedValueStyle}" />
             </StackPanel>
             <HierarchicalDataTemplate.Triggers>
-                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsSelected}" Value="True">
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsFocused}" Value="True">
                     <Setter TargetName="ExpectedValue" Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
                 </DataTrigger>
             </HierarchicalDataTemplate.Triggers>
@@ -85,7 +85,7 @@
                 <TextBlock x:Name="ExpectedValue" Text="{Binding ExpectedValue}" Style="{DynamicResource ExpectedValueStyle}" />
             </StackPanel>
             <HierarchicalDataTemplate.Triggers>
-                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsSelected}" Value="True">
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsFocused}" Value="True">
                     <Setter TargetName="Cost" Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
                     <Setter TargetName="ExpectedValue" Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
                 </DataTrigger>
@@ -99,7 +99,7 @@
                 <TextBlock x:Name="ExpectedValue" Text="{Binding ExpectedValue}" Style="{DynamicResource ExpectedValueStyle}" />
             </StackPanel>
             <HierarchicalDataTemplate.Triggers>
-                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsSelected}" Value="True">
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsFocused}" Value="True">
                     <Setter TargetName="Weight" Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
                     <Setter TargetName="ExpectedValue" Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
                 </DataTrigger>
