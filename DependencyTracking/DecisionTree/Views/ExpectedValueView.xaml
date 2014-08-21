@@ -1,0 +1,24 @@
+﻿<UserControl 
+    x:Class="DecisionTree.Views.ExpectedValueView" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+    mc:Ignorable="d" 
+    d:DesignHeight="300" 
+    d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style x:Key="ExpectedValueStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="#000099"/>
+            <Setter Property="Margin" Value="5,0,5,0"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsFocused}" Value="True">
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <Border Background="Yellow">
+        <TextBlock x:Name="ExpectedValue" Text="{Binding ExpectedValue}" Style="{DynamicResource ExpectedValueStyle}" />
+    </Border>
+</UserControl>

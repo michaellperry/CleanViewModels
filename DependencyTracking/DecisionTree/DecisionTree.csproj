@@ -78,6 +78,9 @@
     <Compile Include="Views\DecisionTreeView.xaml.cs">
       <DependentUpon>DecisionTreeView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ExpectedValueView.xaml.cs">
+      <DependentUpon>ExpectedValueView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\OptionPathView.xaml.cs">
       <DependentUpon>OptionPathView.xaml</DependentUpon>
     </Compile>
@@ -104,6 +107,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\DecisionTreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ExpectedValueView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

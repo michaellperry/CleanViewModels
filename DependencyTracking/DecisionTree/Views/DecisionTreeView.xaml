@@ -5,6 +5,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
     xmlns:h="clr-namespace:DecisionTree.ViewModels.Headers" 
     xmlns:n="clr-namespace:DecisionTree.Models.Nodes" 
+    xmlns:v="clr-namespace:DecisionTree.Views"
     xmlns:a="clr-namespace:Assisticant;assembly=Assisticant.XAML" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     mc:Ignorable="d" 
@@ -61,33 +62,23 @@
             <Setter Property="Foreground" Value="#006600"/>
             <Setter Property="Margin" Value="5,0,0,0"/>
         </Style>
-        <Style x:Key="ExpectedValueStyle" TargetType="{x:Type TextBlock}">
-            <Setter Property="Foreground" Value="#000099"/>
-            <Setter Property="Margin" Value="5,0,5,0"/>
-        </Style>
         <HierarchicalDataTemplate DataType="{x:Type h:RootPathHeader}" ItemsSource="{Binding Children}">
             <StackPanel Orientation="Horizontal">
                 <ContentPresenter ContentTemplateSelector="{DynamicResource ViewSelector}" Content="{Binding Node}"/>
                 <TextBlock Text="{Binding Label}" Style="{DynamicResource LabelStyle}" />
-                <TextBlock x:Name="ExpectedValue" Text="{Binding ExpectedValue}" Style="{DynamicResource ExpectedValueStyle}" />
+                <v:ExpectedValueView />
             </StackPanel>
-            <HierarchicalDataTemplate.Triggers>
-                <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsFocused}" Value="True">
-                    <Setter TargetName="ExpectedValue" Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
-                </DataTrigger>
-            </HierarchicalDataTemplate.Triggers>
         </HierarchicalDataTemplate>
         <HierarchicalDataTemplate DataType="{x:Type h:OptionPathHeader}" ItemsSource="{Binding Children}">
             <StackPanel Orientation="Horizontal">
                 <ContentPresenter ContentTemplateSelector="{DynamicResource ViewSelector}" Content="{Binding Node}"/>
                 <TextBlock Text="{Binding Label}" Style="{DynamicResource LabelStyle}" />
                 <TextBlock x:Name="Cost" Text="{Binding Cost}" Style="{DynamicResource CostStyle}" />
-                <TextBlock x:Name="ExpectedValue" Text="{Binding ExpectedValue}" Style="{DynamicResource ExpectedValueStyle}" />
+                <v:ExpectedValueView />
             </StackPanel>
             <HierarchicalDataTemplate.Triggers>
                 <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsFocused}" Value="True">
                     <Setter TargetName="Cost" Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
-                    <Setter TargetName="ExpectedValue" Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
                 </DataTrigger>
             </HierarchicalDataTemplate.Triggers>
         </HierarchicalDataTemplate>
@@ -96,12 +87,11 @@
                 <ContentPresenter ContentTemplateSelector="{DynamicResource ViewSelector}" Content="{Binding Node}"/>
                 <TextBlock Text="{Binding Label}" Style="{DynamicResource LabelStyle}" />
                 <TextBlock x:Name="Weight" Text="{Binding Weight}" Style="{DynamicResource WeightStyle}" />
-                <TextBlock x:Name="ExpectedValue" Text="{Binding ExpectedValue}" Style="{DynamicResource ExpectedValueStyle}" />
+                <v:ExpectedValueView />
             </StackPanel>
             <HierarchicalDataTemplate.Triggers>
                 <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}, Path=IsFocused}" Value="True">
                     <Setter TargetName="Weight" Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
-                    <Setter TargetName="ExpectedValue" Property="Foreground" Value="{DynamicResource {x:Static SystemColors.HighlightTextBrushKey}}"/>
                 </DataTrigger>
             </HierarchicalDataTemplate.Triggers>
         </HierarchicalDataTemplate>
