@@ -1,8 +1,9 @@
 ﻿using Assisticant.Collections;
+using DecisionTree.Models.Paths;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DecisionTree.Models
+namespace DecisionTree.Models.Nodes
 {
     public class ChoiceNode : Node
     {

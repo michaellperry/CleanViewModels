@@ -2,17 +2,17 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:vm="clr-namespace:DecisionTree.ViewModels"
-        xmlns:m="clr-namespace:DecisionTree.Models"
+        xmlns:n="clr-namespace:DecisionTree.Models.Nodes"
         xmlns:a="clr-namespace:Assisticant;assembly=Assisticant.XAML"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="DecisionTree.MainWindow"
         Title="Decision Tree" Height="350" Width="525"
         >
     <Window.Resources>
         <a:ViewSelector x:Key="ViewSelector"/>
-        <DataTemplate DataType="{x:Type m:ChoiceNode}">
+        <DataTemplate DataType="{x:Type n:ChoiceNode}">
             <Viewbox>
                 <Canvas Height="10" Width="10">
-            		<Rectangle x:Name="Symbol" Width="6.042" Height="6.042" Fill="#721616" Canvas.Left="1.979" Canvas.Top="1.979"/>
+            		<Rectangle x:Name="Symbol" Width="7" Height="7" Fill="#721616" Canvas.Left="1.5" Canvas.Top="1.5"/>
             	</Canvas>
             </Viewbox>
             <DataTemplate.Triggers>
@@ -21,7 +21,7 @@
                 </DataTrigger>
             </DataTemplate.Triggers>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type m:ProbabilityNode}">
+        <DataTemplate DataType="{x:Type n:ProbabilityNode}">
             <Viewbox>
                 <Canvas Height="10" Width="10">
             		<Ellipse x:Name="Symbol" Width="7.624" Height="7.624" Fill="#127912" Canvas.Left="1.188" Canvas.Top="1.188"/>
@@ -33,7 +33,7 @@
                 </DataTrigger>
             </DataTemplate.Triggers>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type m:OutcomeNode}">
+        <DataTemplate DataType="{x:Type n:OutcomeNode}">
             <Viewbox>
                 <Canvas Height="10.171" Width="7.74">
             		<Path x:Name="Symbol" Data="M0.49174139,5.3126628 L8.2310753,10.397055 8.2182412,0.22827089" Fill="#5E0A53" HorizontalAlignment="Left" Height="10.171" Margin="0" Stretch="Fill" VerticalAlignment="Top" Width="7.74"/>

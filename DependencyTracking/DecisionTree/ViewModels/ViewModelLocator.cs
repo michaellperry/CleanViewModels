@@ -1,6 +1,7 @@
 using Assisticant;
 using DecisionTree.Models;
-using System;
+using DecisionTree.Models.Nodes;
+using DecisionTree.Models.Paths;
 
 namespace DecisionTree.ViewModels
 {

@@ -1,5 +1,6 @@
+using DecisionTree.Models.Nodes;
 
-namespace DecisionTree.Models
+namespace DecisionTree.Models.Paths
 {
     public interface IPath
     {

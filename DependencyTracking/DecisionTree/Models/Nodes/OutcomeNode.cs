@@ -1,7 +1,8 @@
 ﻿using Assisticant.Fields;
+using DecisionTree.Models.Paths;
 using System.Collections.Generic;
 
-namespace DecisionTree.Models
+namespace DecisionTree.Models.Nodes
 {
     public class OutcomeNode : Node
     {

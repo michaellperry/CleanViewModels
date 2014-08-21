@@ -1,4 +1,5 @@
-using DecisionTree.Models;
+using DecisionTree.Models.Nodes;
+using DecisionTree.Models.Paths;
 using System;
 using System.Collections.Generic;
 using System.Linq;

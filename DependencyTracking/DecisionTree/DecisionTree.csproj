@@ -83,15 +83,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\Builder.cs" />
-    <Compile Include="Models\Chance.cs" />
-    <Compile Include="Models\ChoiceNode.cs" />
-    <Compile Include="Models\IPath.cs" />
-    <Compile Include="Models\Node.cs" />
-    <Compile Include="Models\Option.cs" />
-    <Compile Include="Models\OutcomeNode.cs" />
-    <Compile Include="Models\ProbabilityNode.cs" />
-    <Compile Include="Models\Root.cs" />
+    <Compile Include="Models\Paths\Chance.cs" />
+    <Compile Include="Models\Nodes\ChoiceNode.cs" />
+    <Compile Include="Models\Paths\IPath.cs" />
+    <Compile Include="Models\Nodes\Node.cs" />
+    <Compile Include="Models\Paths\Option.cs" />
+    <Compile Include="Models\Nodes\OutcomeNode.cs" />
+    <Compile Include="Models\Nodes\ProbabilityNode.cs" />
+    <Compile Include="Models\Paths\Root.cs" />
     <Compile Include="Models\Selection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

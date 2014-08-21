@@ -1,8 +1,6 @@
-using Assisticant;
 using DecisionTree.Models;
+using DecisionTree.Models.Paths;
 using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Input;
 
 namespace DecisionTree.ViewModels
 {

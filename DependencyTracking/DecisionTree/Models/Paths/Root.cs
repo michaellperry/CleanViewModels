@@ -1,6 +1,7 @@
 ﻿using Assisticant.Fields;
+using DecisionTree.Models.Nodes;
 
-namespace DecisionTree.Models
+namespace DecisionTree.Models.Paths
 {
     public class Root : IPath
     {

@@ -1,4 +1,4 @@
-using DecisionTree.Models;
+using DecisionTree.Models.Nodes;
 
 namespace DecisionTree.ViewModels
 {
