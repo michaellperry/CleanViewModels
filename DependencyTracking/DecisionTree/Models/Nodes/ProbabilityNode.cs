@@ -1,5 +1,6 @@
 ﻿using Assisticant.Collections;
 using DecisionTree.Models.Paths;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -21,7 +22,12 @@ namespace DecisionTree.Models.Nodes
 
         public override float ExpectedValue
         {
-            get { return _chances.Sum(p => p.Weight * p.Child.ExpectedValue); }
+            get
+            {
+                var denominator = _chances.Sum(p => p.Weight);
+                var numerator = _chances.Sum(p => p.Weight * p.Child.ExpectedValue);
+                return numerator / denominator;
+            }
         }
 
         public override IEnumerable<Path> Paths
