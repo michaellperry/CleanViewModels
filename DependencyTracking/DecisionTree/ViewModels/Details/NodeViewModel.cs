@@ -1,5 +1,4 @@
 using DecisionTree.Models.Nodes;
-using DecisionTree.Models.Paths;
 using System;
 
 namespace DecisionTree.ViewModels.Details
@@ -23,9 +22,19 @@ namespace DecisionTree.ViewModels.Details
             return Node.GetHashCode();
         }
 
-        public static NodeViewModel ForPath(Path path)
+        public static NodeViewModel ForNode(Node node)
         {
-            throw new NotImplementedException();
+            return Map<OutcomeNode>(node, o => new OutcomeNodeViewModel(o));
+        }
+
+        private static NodeViewModel Map<TNode>(Node node, Func<TNode, NodeViewModel> ctor)
+            where TNode : Node
+        {
+            var specificNode = node as TNode;
+            if (specificNode != null)
+                return ctor(specificNode);
+            else
+                return null;
         }
     }
 }

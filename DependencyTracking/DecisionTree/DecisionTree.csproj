@@ -60,15 +60,33 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\Details\ChancePathViewModel.cs" />
+    <Compile Include="ViewModels\Details\NodeViewModel.cs" />
+    <Compile Include="ViewModels\Details\OptionPathViewModel.cs" />
+    <Compile Include="ViewModels\Details\RootPathViewModel.cs" />
     <Compile Include="ViewModels\Headers\ChancePathHeader.cs" />
-    <Compile Include="ViewModels\Details\ChoiceNodeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\Headers\PathHeader.cs" />
-    <Compile Include="ViewModels\Details\NodeViewModel.cs" />
+    <Compile Include="ViewModels\Details\PathViewModel.cs" />
     <Compile Include="ViewModels\Headers\OptionPathHeader.cs" />
     <Compile Include="ViewModels\Details\OutcomeNodeViewModel.cs" />
     <Compile Include="ViewModels\Headers\RootPathHeader.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
+    <Compile Include="Views\ChancePathView.xaml.cs">
+      <DependentUpon>ChancePathView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DecisionTreeView.xaml.cs">
+      <DependentUpon>DecisionTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OptionPathView.xaml.cs">
+      <DependentUpon>OptionPathView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OutcomeNodeView.xaml.cs">
+      <DependentUpon>OutcomeNodeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RootPathView.xaml.cs">
+      <DependentUpon>RootPathView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -81,6 +99,26 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ChancePathView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DecisionTreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OptionPathView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OutcomeNodeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RootPathView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\Paths\Chance.cs" />

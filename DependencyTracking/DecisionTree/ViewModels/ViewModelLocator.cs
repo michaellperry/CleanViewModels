@@ -25,13 +25,13 @@ namespace DecisionTree.ViewModels
             get { return ViewModel(() => new MainViewModel(_root, _selection)); }
         }
 
-		public object Item
+		public object Detail
 		{
 			get
 			{
 				return ViewModel(() => _selection.SelectedPath == null
 					? null
-					: NodeViewModel.ForPath(_selection.SelectedPath));
+					: PathViewModel.ForPath(_selection.SelectedPath));
 			}
 		}
 
