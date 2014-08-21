@@ -1,28 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using Assisticant;
+using Assisticant.Fields;
+using DecisionTree.ViewModels.Headers;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 
 namespace DecisionTree.Views
 {
-    /// <summary>
-    /// Interaction logic for ExpectedValueView.xaml
-    /// </summary>
     public partial class ExpectedValueView : UserControl
     {
+        private Storyboard _updatedStoryboard;
+        private ComputedSubscription _expectedValueSubscription;
+
         public ExpectedValueView()
         {
             InitializeComponent();
+        }
+
+        private void UserControl_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            _updatedStoryboard = (Storyboard)FindResource("UpdatedStoryboard");
+
+            ForView.Unwrap<PathHeader>(DataContext, header =>
+            {
+                var expectedValue = new Computed<string>(() => header.ExpectedValue);
+                _expectedValueSubscription = expectedValue.Subscribe(str =>
+                {
+                    BeginStoryboard(_updatedStoryboard);
+                });
+            });
+        }
+
+        private void UserControl_Unloaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+            _expectedValueSubscription.Unsubscribe();
         }
     }
 }
