@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace DecisionTree.ViewModels.Headers
 {
-    public abstract class NodeHeader
+    public abstract class PathHeader
     {
         public abstract Path Path { get; }
 
@@ -25,13 +25,13 @@ namespace DecisionTree.ViewModels.Headers
             get { return Path.Child; }
         }
 
-        public IEnumerable<NodeHeader> Children
+        public IEnumerable<PathHeader> Children
         {
             get
             {
                 return
                     from child in Path.Child.Paths
-                    select NodeHeader.ForPath(child);
+                    select PathHeader.ForPath(child);
             }
         }
 
@@ -39,7 +39,7 @@ namespace DecisionTree.ViewModels.Headers
         {
             if (obj == this)
                 return true;
-            NodeHeader that = obj as NodeHeader;
+            PathHeader that = obj as PathHeader;
             if (that == null)
                 return false;
             return Object.Equals(this.Path, that.Path);
@@ -50,15 +50,15 @@ namespace DecisionTree.ViewModels.Headers
             return Path.GetHashCode();
         }
 
-        public static NodeHeader ForPath(Path path)
+        public static PathHeader ForPath(Path path)
         {
             return
-                Map<Chance>(path, c => new ChanceNodeHeader(c)) ??
-                Map<Option>(path, o => new OptionNodeHeader(o)) ??
-                Map<Root>  (path, r => new RootNodeHeader(r));
+                Map<Chance>(path, c => new ChancePathHeader(c)) ??
+                Map<Option>(path, o => new OptionPathHeader(o)) ??
+                Map<Root>  (path, r => new RootPathHeader(r));
         }
 
-        private static NodeHeader Map<TPath>(Path path, Func<TPath, NodeHeader> ctor)
+        private static PathHeader Map<TPath>(Path path, Func<TPath, PathHeader> ctor)
             where TPath: Path
         {
             var specificPath = path as TPath;

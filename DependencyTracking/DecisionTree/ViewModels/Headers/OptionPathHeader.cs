@@ -3,11 +3,11 @@ using System;
 
 namespace DecisionTree.ViewModels.Headers
 {
-    public class OptionNodeHeader : NodeHeader
+    public class OptionPathHeader : PathHeader
     {
         private readonly Option _option;
 
-        public OptionNodeHeader(Option option)
+        public OptionPathHeader(Option option)
         {
             _option = option;            
         }

@@ -61,7 +61,7 @@
         	<Setter Property="Foreground" Value="#000099"/>
         	<Setter Property="Margin" Value="5,0,5,0"/>
         </Style>
-        <HierarchicalDataTemplate DataType="{x:Type h:RootNodeHeader}" ItemsSource="{Binding Children}">
+        <HierarchicalDataTemplate DataType="{x:Type h:RootPathHeader}" ItemsSource="{Binding Children}">
             <StackPanel Orientation="Horizontal">
                 <ContentPresenter ContentTemplateSelector="{DynamicResource ViewSelector}" Content="{Binding Node}"/>
                 <TextBlock Text="{Binding Label}" Style="{DynamicResource LabelStyle}" />
@@ -73,7 +73,7 @@
                 </DataTrigger>
             </HierarchicalDataTemplate.Triggers>
         </HierarchicalDataTemplate>
-        <HierarchicalDataTemplate DataType="{x:Type h:OptionNodeHeader}" ItemsSource="{Binding Children}">
+        <HierarchicalDataTemplate DataType="{x:Type h:OptionPathHeader}" ItemsSource="{Binding Children}">
             <StackPanel Orientation="Horizontal">
                 <ContentPresenter ContentTemplateSelector="{DynamicResource ViewSelector}" Content="{Binding Node}"/>
                 <TextBlock Text="{Binding Label}" Style="{DynamicResource LabelStyle}" />
@@ -87,7 +87,7 @@
                 </DataTrigger>
             </HierarchicalDataTemplate.Triggers>
         </HierarchicalDataTemplate>
-        <HierarchicalDataTemplate DataType="{x:Type h:ChanceNodeHeader}" ItemsSource="{Binding Children}">
+        <HierarchicalDataTemplate DataType="{x:Type h:ChancePathHeader}" ItemsSource="{Binding Children}">
             <StackPanel Orientation="Horizontal">
                 <ContentPresenter ContentTemplateSelector="{DynamicResource ViewSelector}" Content="{Binding Node}"/>
                 <TextBlock Text="{Binding Label}" Style="{DynamicResource LabelStyle}" />

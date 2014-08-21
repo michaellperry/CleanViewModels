@@ -16,21 +16,21 @@ namespace DecisionTree.ViewModels
 			_selection = selection;
         }
 
-        public IEnumerable<NodeHeader> Nodes
+        public IEnumerable<PathHeader> Nodes
         {
             get
             {
-                yield return NodeHeader.ForPath(_root);
+                yield return PathHeader.ForPath(_root);
             }
         }
 
-        public NodeHeader SelectedItem
+        public PathHeader SelectedItem
         {
             get
             {
                 return _selection.SelectedPath == null
                     ? null
-                    : NodeHeader.ForPath(_selection.SelectedPath);
+                    : PathHeader.ForPath(_selection.SelectedPath);
             }
             set
             {

@@ -3,11 +3,11 @@ using System;
 
 namespace DecisionTree.ViewModels.Headers
 {
-    public class ChanceNodeHeader : NodeHeader
+    public class ChancePathHeader : PathHeader
     {
         private readonly Chance _chance;
 
-        public ChanceNodeHeader(Chance chance)
+        public ChancePathHeader(Chance chance)
         {
             _chance = chance;
         }

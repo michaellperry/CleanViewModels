@@ -2,11 +2,11 @@ using DecisionTree.Models.Paths;
 
 namespace DecisionTree.ViewModels.Headers
 {
-    public class RootNodeHeader : NodeHeader
+    public class RootPathHeader : PathHeader
     {
         private readonly Root _root;
 
-        public RootNodeHeader(Root root)
+        public RootPathHeader(Root root)
         {
             _root = root;            
         }
