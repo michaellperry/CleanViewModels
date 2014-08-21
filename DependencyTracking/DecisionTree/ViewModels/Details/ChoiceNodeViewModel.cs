@@ -1,6 +1,6 @@
 using DecisionTree.Models.Nodes;
 
-namespace DecisionTree.ViewModels
+namespace DecisionTree.ViewModels.Details
 {
     public class ChoiceNodeViewModel : NodeViewModel
     {

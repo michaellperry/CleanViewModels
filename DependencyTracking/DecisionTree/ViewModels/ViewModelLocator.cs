@@ -2,6 +2,7 @@ using Assisticant;
 using DecisionTree.Models;
 using DecisionTree.Models.Nodes;
 using DecisionTree.Models.Paths;
+using DecisionTree.ViewModels.Details;
 
 namespace DecisionTree.ViewModels
 {

@@ -2,7 +2,7 @@ using DecisionTree.Models.Nodes;
 using DecisionTree.Models.Paths;
 using System;
 
-namespace DecisionTree.ViewModels
+namespace DecisionTree.ViewModels.Details
 {
     public abstract class NodeViewModel
     {
