@@ -20,7 +20,7 @@ namespace DecisionTree.Models.Nodes
             get { return _options.Max(o => o.Child.ExpectedValue - o.Cost); }
         }
 
-        public override IEnumerable<IPath> Paths
+        public override IEnumerable<Path> Paths
         {
             get { return _options; }
         }

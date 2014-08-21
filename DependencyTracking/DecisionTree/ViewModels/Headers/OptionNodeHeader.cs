@@ -12,7 +12,7 @@ namespace DecisionTree.ViewModels.Headers
             _option = option;            
         }
 
-        public override IPath Path
+        public override Path Path
         {
             get { return _option; }
         }

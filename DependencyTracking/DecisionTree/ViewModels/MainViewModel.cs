@@ -7,10 +7,10 @@ namespace DecisionTree.ViewModels
 {
     public class MainViewModel
     {
-        private readonly IPath _root;
+        private readonly Path _root;
 		private readonly Selection _selection;
 
-        public MainViewModel(IPath root, Selection selection)
+        public MainViewModel(Path root, Selection selection)
         {
             _root = root;
 			_selection = selection;

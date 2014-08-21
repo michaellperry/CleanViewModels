@@ -11,7 +11,7 @@ namespace DecisionTree.ViewModels.Headers
             _root = root;            
         }
 
-        public override IPath Path
+        public override Path Path
         {
             get { return _root; }
         }

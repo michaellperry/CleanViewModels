@@ -5,11 +5,11 @@ namespace DecisionTree.Models
 {
     public class Selection
     {
-        private Observable<IPath> _selectedPath = new Observable<IPath>();
+        private Observable<Path> _selectedPath = new Observable<Path>();
 
-        public IPath SelectedPath
+        public Path SelectedPath
         {
-            get { return _selectedPath.Value; }
+            get { return _selectedPath; }
             set { _selectedPath.Value = value; }
         }
     }

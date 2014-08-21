@@ -20,7 +20,7 @@ namespace DecisionTree.Models.Nodes
             get;
         }
 
-        public abstract IEnumerable<IPath> Paths
+        public abstract IEnumerable<Path> Paths
         {
             get;
         }

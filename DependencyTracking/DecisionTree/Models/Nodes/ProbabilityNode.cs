@@ -24,7 +24,7 @@ namespace DecisionTree.Models.Nodes
             get { return _chances.Sum(p => p.Weight * p.Child.ExpectedValue); }
         }
 
-        public override IEnumerable<IPath> Paths
+        public override IEnumerable<Path> Paths
         {
             get { return _chances; }
         }

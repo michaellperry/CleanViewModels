@@ -85,7 +85,7 @@
   <ItemGroup>
     <Compile Include="Models\Paths\Chance.cs" />
     <Compile Include="Models\Nodes\ChoiceNode.cs" />
-    <Compile Include="Models\Paths\IPath.cs" />
+    <Compile Include="Models\Paths\Path.cs" />
     <Compile Include="Models\Nodes\Node.cs" />
     <Compile Include="Models\Paths\Option.cs" />
     <Compile Include="Models\Nodes\OutcomeNode.cs" />

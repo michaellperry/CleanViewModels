@@ -8,7 +8,7 @@ namespace DecisionTree.ViewModels.Headers
 {
     public abstract class NodeHeader
     {
-        public abstract IPath Path { get; }
+        public abstract Path Path { get; }
 
         public string Label
         {
@@ -50,7 +50,7 @@ namespace DecisionTree.ViewModels.Headers
             return Path.GetHashCode();
         }
 
-        public static NodeHeader ForPath(IPath path)
+        public static NodeHeader ForPath(Path path)
         {
             return
                 Map<Chance>(path, c => new ChanceNodeHeader(c)) ??
@@ -58,8 +58,8 @@ namespace DecisionTree.ViewModels.Headers
                 Map<Root>  (path, r => new RootNodeHeader(r));
         }
 
-        private static NodeHeader Map<TPath>(IPath path, Func<TPath, NodeHeader> ctor)
-            where TPath: class, IPath
+        private static NodeHeader Map<TPath>(Path path, Func<TPath, NodeHeader> ctor)
+            where TPath: Path
         {
             var specificPath = path as TPath;
             if (specificPath != null)

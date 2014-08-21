@@ -23,7 +23,7 @@ namespace DecisionTree.ViewModels
             return Node.GetHashCode();
         }
 
-        public static NodeViewModel ForPath(IPath path)
+        public static NodeViewModel ForPath(Path path)
         {
             throw new NotImplementedException();
         }

@@ -19,7 +19,7 @@ namespace DecisionTree.Models.Nodes
             return this;
         }
 
-        public override IEnumerable<IPath> Paths
+        public override IEnumerable<Path> Paths
         {
             get { yield break; }
         }
