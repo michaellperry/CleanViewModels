@@ -1,3 +1,4 @@
+using DecisionTree.Models;
 using DecisionTree.Models.Paths;
 using System;
 
@@ -7,7 +8,8 @@ namespace DecisionTree.ViewModels.Headers
     {
         private readonly Option _option;
 
-        public OptionPathHeader(Option option)
+        public OptionPathHeader(Option option, Selection selection)
+            : base(selection)
         {
             _option = option;            
         }

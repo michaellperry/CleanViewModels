@@ -20,22 +20,7 @@ namespace DecisionTree.ViewModels
         {
             get
             {
-                yield return PathHeader.ForPath(_root);
-            }
-        }
-
-        public PathHeader SelectedItem
-        {
-            get
-            {
-                return _selection.SelectedPath == null
-                    ? null
-                    : PathHeader.ForPath(_selection.SelectedPath);
-            }
-            set
-            {
-                if (value != null)
-                    _selection.SelectedPath = value.Path;
+                yield return PathHeader.ForPath(_root, _selection);
             }
         }
     }

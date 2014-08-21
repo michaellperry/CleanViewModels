@@ -17,13 +17,19 @@
         <DataTemplate DataType="{x:Type vm:RootPathViewModel}">
             <v:RootPathView />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ChancePathViewModel}">
+            <v:ChancePathView />
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:OptionPathViewModel}">
+            <v:OptionPathView />
+        </DataTemplate>
     </Window.Resources>
-    <Grid>
+    <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="232*"/>
             <ColumnDefinition Width="285*"/>
         </Grid.ColumnDefinitions>
-        <v:DecisionTreeView />
+        <v:DecisionTreeView Margin="10" />
         <ContentPresenter Content="{Binding Source={StaticResource Locator}, Path=Detail}" ContentTemplateSelector="{DynamicResource ViewSelector}" Grid.Column="1"/>
     </Grid>
 </Window>

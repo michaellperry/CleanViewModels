@@ -1,3 +1,4 @@
+using DecisionTree.Models;
 using DecisionTree.Models.Paths;
 
 namespace DecisionTree.ViewModels.Headers
@@ -6,7 +7,8 @@ namespace DecisionTree.ViewModels.Headers
     {
         private readonly Root _root;
 
-        public RootPathHeader(Root root)
+        public RootPathHeader(Root root, Selection selection) :
+            base(selection)
         {
             _root = root;            
         }
