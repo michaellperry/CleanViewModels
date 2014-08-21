@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DecisionTree.ViewModels
+namespace DecisionTree.ViewModels.Headers
 {
     public abstract class NodeHeader
     {

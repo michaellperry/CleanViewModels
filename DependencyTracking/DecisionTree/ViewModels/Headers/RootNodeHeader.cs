@@ -1,6 +1,6 @@
 using DecisionTree.Models.Paths;
 
-namespace DecisionTree.ViewModels
+namespace DecisionTree.ViewModels.Headers
 {
     public class RootNodeHeader : NodeHeader
     {

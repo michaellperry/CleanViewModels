@@ -1,5 +1,6 @@
 using DecisionTree.Models;
 using DecisionTree.Models.Paths;
+using DecisionTree.ViewModels.Headers;
 using System.Collections.Generic;
 
 namespace DecisionTree.ViewModels

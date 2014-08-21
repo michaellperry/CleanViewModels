@@ -60,14 +60,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ViewModels\ChanceNodeHeader.cs" />
+    <Compile Include="ViewModels\Headers\ChanceNodeHeader.cs" />
     <Compile Include="ViewModels\ChoiceNodeViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\NodeHeader.cs" />
+    <Compile Include="ViewModels\Headers\NodeHeader.cs" />
     <Compile Include="ViewModels\NodeViewModel.cs" />
-    <Compile Include="ViewModels\OptionNodeHeader.cs" />
+    <Compile Include="ViewModels\Headers\OptionNodeHeader.cs" />
     <Compile Include="ViewModels\OutcomeNodeViewModel.cs" />
-    <Compile Include="ViewModels\RootNodeHeader.cs" />
+    <Compile Include="ViewModels\Headers\RootNodeHeader.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

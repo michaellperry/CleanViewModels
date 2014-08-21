@@ -1,7 +1,7 @@
 ﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="clr-namespace:DecisionTree.ViewModels"
+        xmlns:h="clr-namespace:DecisionTree.ViewModels.Headers"
         xmlns:n="clr-namespace:DecisionTree.Models.Nodes"
         xmlns:a="clr-namespace:Assisticant;assembly=Assisticant.XAML"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="DecisionTree.MainWindow"
@@ -61,7 +61,7 @@
         	<Setter Property="Foreground" Value="#000099"/>
         	<Setter Property="Margin" Value="5,0,5,0"/>
         </Style>
-        <HierarchicalDataTemplate DataType="{x:Type vm:RootNodeHeader}" ItemsSource="{Binding Children}">
+        <HierarchicalDataTemplate DataType="{x:Type h:RootNodeHeader}" ItemsSource="{Binding Children}">
             <StackPanel Orientation="Horizontal">
                 <ContentPresenter ContentTemplateSelector="{DynamicResource ViewSelector}" Content="{Binding Node}"/>
                 <TextBlock Text="{Binding Label}" Style="{DynamicResource LabelStyle}" />
@@ -73,7 +73,7 @@
                 </DataTrigger>
             </HierarchicalDataTemplate.Triggers>
         </HierarchicalDataTemplate>
-        <HierarchicalDataTemplate DataType="{x:Type vm:OptionNodeHeader}" ItemsSource="{Binding Children}">
+        <HierarchicalDataTemplate DataType="{x:Type h:OptionNodeHeader}" ItemsSource="{Binding Children}">
             <StackPanel Orientation="Horizontal">
                 <ContentPresenter ContentTemplateSelector="{DynamicResource ViewSelector}" Content="{Binding Node}"/>
                 <TextBlock Text="{Binding Label}" Style="{DynamicResource LabelStyle}" />
@@ -87,7 +87,7 @@
                 </DataTrigger>
             </HierarchicalDataTemplate.Triggers>
         </HierarchicalDataTemplate>
-        <HierarchicalDataTemplate DataType="{x:Type vm:ChanceNodeHeader}" ItemsSource="{Binding Children}">
+        <HierarchicalDataTemplate DataType="{x:Type h:ChanceNodeHeader}" ItemsSource="{Binding Children}">
             <StackPanel Orientation="Horizontal">
                 <ContentPresenter ContentTemplateSelector="{DynamicResource ViewSelector}" Content="{Binding Node}"/>
                 <TextBlock Text="{Binding Label}" Style="{DynamicResource LabelStyle}" />

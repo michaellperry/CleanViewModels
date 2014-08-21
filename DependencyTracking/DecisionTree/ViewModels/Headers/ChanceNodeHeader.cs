@@ -1,7 +1,7 @@
 using DecisionTree.Models.Paths;
 using System;
 
-namespace DecisionTree.ViewModels
+namespace DecisionTree.ViewModels.Headers
 {
     public class ChanceNodeHeader : NodeHeader
     {
