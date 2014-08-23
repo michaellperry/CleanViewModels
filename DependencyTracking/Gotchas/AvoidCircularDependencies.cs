@@ -18,7 +18,7 @@ namespace Gotchas
 
             var total = loan.Total;
 
-            Assert.AreEqual(1100.0, total);
+            Assert.AreEqual(1489.85, total, 0.01);
         }
 
         [TestMethod]
