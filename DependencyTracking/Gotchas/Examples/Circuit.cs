@@ -1,4 +1,8 @@
-﻿using Assisticant.Fields;
+﻿using Assisticant;
+using Assisticant.Fields;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Gotchas.Examples
 {
