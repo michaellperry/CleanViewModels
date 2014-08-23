@@ -11,10 +11,10 @@ namespace DecisionTree.ViewModels.Details
             _node = node;
         }
 
-        public float ExpectedValue
+        public float Value
         {
-            get { return _node.ExpectedValue; }
-            set { _node.SetExpectedValue(value); }
+            get { return _node.Value; }
+            set { _node.Value = value; }
         }
 
         public override Node Node

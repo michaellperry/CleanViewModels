@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <StackPanel>
-        <TextBlock Text="Expected Value:" Style="{DynamicResource LabelStyle}"/>
-        <TextBox Text="{Binding Path=ExpectedValue}" Style="{DynamicResource ValueStyle}" />
+        <TextBlock Text="Value:" Style="{DynamicResource LabelStyle}"/>
+        <TextBox Text="{Binding Path=Value}" Style="{DynamicResource ValueStyle}" />
     </StackPanel>
 </UserControl>

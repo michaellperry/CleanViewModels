@@ -6,17 +6,17 @@ namespace DecisionTree.Models.Nodes
 {
     public class OutcomeNode : Node
     {
-        private Observable<float> _expectedValue = new Observable<float>(default(float));
+        private Observable<float> _value = new Observable<float>(default(float));
 
         public override float ExpectedValue
         {
-            get { return _expectedValue; }
+            get { return _value; }
         }
 
-        public OutcomeNode SetExpectedValue(float value)
+        public float Value
         {
-            _expectedValue.Value = value;
-            return this;
+            get { return _value; }
+            set { _value.Value = value; }
         }
 
         public override IEnumerable<Path> Paths
