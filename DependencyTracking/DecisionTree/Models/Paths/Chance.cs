@@ -1,5 +1,4 @@
 using Assisticant.Fields;
-using DecisionTree.Models.Nodes;
 
 namespace DecisionTree.Models.Paths
 {
