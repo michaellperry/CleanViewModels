@@ -27,11 +27,11 @@ namespace Gotchas
             var circuit = new Circuit();
             circuit.Battery = 5.0;
 
-            circuit.Resistor1.Resistance = 30.0;
-            circuit.Resistor2.Resistance = 50.0;
-            circuit.Resistor3.Resistance = 100.0;
+            circuit.Resistor1.Resistance = 3000.0;
+            circuit.Resistor2.Resistance = 5000.0;
+            circuit.Resistor3.Resistance = 10000.0;
 
-            Assert.AreEqual(0.3, circuit.Voltage1);
+            Assert.AreEqual(2.4, circuit.Voltage1, 0.1);
         }
     }
 }
