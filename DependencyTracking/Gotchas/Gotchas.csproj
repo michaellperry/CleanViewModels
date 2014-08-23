@@ -57,7 +57,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AvoidCircularDependencies.cs" />
+    <Compile Include="Examples\Circuit.cs" />
     <Compile Include="Examples\LoanCalculator.cs" />
+    <Compile Include="Examples\Resistor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
