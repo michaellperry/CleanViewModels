@@ -15,14 +15,14 @@ namespace DecisionTree.Models.Nodes
             return this;
         }
 
-        public override float ExpectedValue
-        {
-            get { return _options.Max(o => o.Child.ExpectedValue - o.Cost); }
-        }
-
         public override IEnumerable<Path> Paths
         {
             get { return _options; }
+        }
+
+        protected override float ComputeExpectedValue()
+        {
+            return _options.Max(o => o.Child.ExpectedValue - o.Cost);
         }
     }
 }

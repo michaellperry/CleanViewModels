@@ -14,8 +14,12 @@ namespace DecisionTree.Models.Nodes
             set { _label.Value = value; }
         }
 
+        public float ExpectedValue
+        {
+            get { return ComputeExpectedValue(); }
+        }
 
-        public abstract float ExpectedValue { get; }
         public abstract IEnumerable<Path> Paths { get; }
+        protected abstract float ComputeExpectedValue();
     }
 }

@@ -20,19 +20,14 @@ namespace DecisionTree.Models.Nodes
             return this;
         }
 
-        public override float ExpectedValue
-        {
-            get
-            {
-                var denominator = _chances.Sum(p => p.Weight);
-                var numerator = _chances.Sum(p => p.Weight * p.Child.ExpectedValue);
-                return numerator / denominator;
-            }
-        }
-
         public override IEnumerable<Path> Paths
         {
             get { return _chances; }
+        }
+
+        protected override float ComputeExpectedValue()
+        {
+            return _chances.Sum(p => p.Weight * p.Child.ExpectedValue);
         }
     }
 }

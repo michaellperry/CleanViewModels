@@ -8,11 +8,6 @@ namespace DecisionTree.Models.Nodes
     {
         private Observable<float> _value = new Observable<float>(default(float));
 
-        public override float ExpectedValue
-        {
-            get { return _value; }
-        }
-
         public float Value
         {
             get { return _value; }
@@ -22,6 +17,11 @@ namespace DecisionTree.Models.Nodes
         public override IEnumerable<Path> Paths
         {
             get { yield break; }
+        }
+
+        protected override float ComputeExpectedValue()
+        {
+            return _value;
         }
     }
 }
