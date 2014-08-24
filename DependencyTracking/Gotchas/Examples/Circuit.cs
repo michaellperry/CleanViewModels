@@ -9,7 +9,7 @@ namespace Gotchas.Examples
     public class Circuit
     {
         private Observable<double> _battery = new Observable<double>();
-        private Computed<double> _voltage1;
+        private Observable<double> _voltage1 = new Observable<double>();
 
         private Resistor _resistor1;
         private Resistor _resistor2;
@@ -17,15 +17,27 @@ namespace Gotchas.Examples
 
         public Circuit()
         {
-            _voltage1 = new Computed<double>(() =>
-                _resistor1.Resistance *
-                (_resistor2.Current + _resistor3.Current));
-
             _resistor1 = new Resistor(() => _voltage1);
             _resistor2 = new Resistor(() => _battery - _voltage1);
             _resistor3 = new Resistor(() => _battery - _voltage1);
         }
 
+        public void Compute()
+        {
+            _voltage1.Value = _battery / 2.0;
+
+            while (true)
+            {
+                var nextVoltage1 =
+                    _resistor1.Resistance *
+                    (_resistor2.Current + _resistor3.Current);
+
+                if (Math.Abs(_voltage1 - nextVoltage1) < 0.00001)
+                    break;
+
+                _voltage1.Value = (_voltage1 + nextVoltage1) / 2.0;
+            }
+        }
         public double Battery
         {
             get { return _battery; }

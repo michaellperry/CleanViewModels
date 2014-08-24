@@ -31,6 +31,8 @@ namespace Gotchas
             circuit.Resistor2.Resistance = 5000.0;
             circuit.Resistor3.Resistance = 10000.0;
 
+            circuit.Compute();
+
             Assert.AreEqual(2.4, circuit.Voltage1, 0.1);
         }
     }
