@@ -14,7 +14,7 @@ namespace Gotchas
             var loan = new LoanCalculator();
             loan.Principal = 1000.0;
             loan.Rate = 0.08;
-            //loan.Time = 5;
+            loan.Time = 5;
 
             var total = loan.Total;
 
