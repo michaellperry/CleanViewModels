@@ -22,6 +22,7 @@ namespace DecisionTree.Models.Nodes
 
         protected override float ComputeExpectedValue()
         {
+            RaiseExpectedValueComputed();
             return _options.Max(o => o.Child.ExpectedValue - o.Cost);
         }
     }

@@ -21,6 +21,7 @@ namespace DecisionTree.Models.Nodes
 
         protected override float ComputeExpectedValue()
         {
+            RaiseExpectedValueComputed();
             return _value;
         }
     }

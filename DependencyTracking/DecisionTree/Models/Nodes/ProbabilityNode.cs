@@ -27,6 +27,7 @@ namespace DecisionTree.Models.Nodes
 
         protected override float ComputeExpectedValue()
         {
+            RaiseExpectedValueComputed();
             return _chances.Sum(p => p.Weight * p.Child.ExpectedValue);
         }
     }

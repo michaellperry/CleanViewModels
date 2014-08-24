@@ -1,6 +1,7 @@
 ﻿using Assisticant;
 using Assisticant.Fields;
 using DecisionTree.ViewModels.Headers;
+using System.Threading;
 using System.Windows.Controls;
 using System.Windows.Media.Animation;
 
@@ -9,7 +10,6 @@ namespace DecisionTree.Views
     public partial class ExpectedValueView : UserControl
     {
         private Storyboard _updatedStoryboard;
-        private ComputedSubscription _expectedValueSubscription;
 
         public ExpectedValueView()
         {
@@ -22,17 +22,21 @@ namespace DecisionTree.Views
 
             ForView.Unwrap<PathHeader>(DataContext, header =>
             {
-                var expectedValue = new Computed<string>(() => header.ExpectedValue);
-                _expectedValueSubscription = expectedValue.Subscribe(str =>
-                {
-                    BeginStoryboard(_updatedStoryboard);
-                });
+                header.Node.ExpectedValueComputed += Node_ExpectedValueComputed;
             });
         }
 
         private void UserControl_Unloaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            _expectedValueSubscription.Unsubscribe();
+            ForView.Unwrap<PathHeader>(DataContext, header =>
+            {
+                header.Node.ExpectedValueComputed -= Node_ExpectedValueComputed;
+            });
+        }
+
+        private void Node_ExpectedValueComputed(object sender, System.EventArgs e)
+        {
+            BeginStoryboard(_updatedStoryboard);
         }
     }
 }
