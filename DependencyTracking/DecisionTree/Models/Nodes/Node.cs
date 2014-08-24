@@ -13,6 +13,13 @@ namespace DecisionTree.Models.Nodes
     public abstract class Node
     {
         private Observable<string> _label = new Observable<string>();
+        private Computed<float> _expectedValue;
+
+        public Node()
+        {
+            _expectedValue = new Computed<float>(() =>
+                ComputeExpectedValue());
+        }
 
         public string Label
         {
@@ -22,7 +29,7 @@ namespace DecisionTree.Models.Nodes
 
         public float ExpectedValue
         {
-            get { return ComputeExpectedValue(); }
+            get { return _expectedValue.Value; }
         }
 
         public abstract IEnumerable<Path> Paths { get; }
