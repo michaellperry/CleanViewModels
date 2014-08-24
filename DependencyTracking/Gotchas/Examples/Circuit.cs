@@ -8,7 +8,7 @@ namespace Gotchas.Examples
 {
     public class Circuit
     {
-        private Observable<double> _battery = new Observable<double>(default(double));
+        private Observable<double> _battery = new Observable<double>();
         private Computed<double> _voltage1;
 
         private Resistor _resistor1;

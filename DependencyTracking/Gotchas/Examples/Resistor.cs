@@ -13,7 +13,8 @@ namespace Gotchas.Examples
         {
             _voltageDrop = voltageDrop;
 
-            _current = new Computed<double>(() => _voltageDrop() / _resistance);
+            _current = new Computed<double>(() =>
+                _voltageDrop() / _resistance);
         }
 
         public double Resistance
